@@ -1,0 +1,4 @@
+subject ID,age,gender,handedness,question ID,condition,value
+JanClaude,32,Female,Rigth handed,0,s1PP - o3PP - s3PP,0.8076074
+JanClaude,32,Female,Rigth handed,1,s1PP - o3PP - s3PP,0.15375
+JanClaude,32,Female,Rigth handed,2,s1PP - o3PP - s3PP,0

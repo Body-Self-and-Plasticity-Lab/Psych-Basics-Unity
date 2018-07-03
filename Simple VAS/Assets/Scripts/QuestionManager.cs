@@ -1,0 +1,59 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class QuestionManager : MonoBehaviour {
+
+	List<string> questionList = new List<string>();
+
+	public Text questionUI;
+	public Button nextButton;
+	public Scrollbar scrollValue;
+
+	public CsvWrite csvWriter;
+
+	public static string questionnaireItem, VASvalue;
+
+	private int currentItem;
+
+	// Use this for initialization
+	void Start () {
+
+		currentItem = 0;
+		questionList = CsvRead.questionnaireInput;
+		questionUI.text = questionList[currentItem];
+		nextButton.interactable = false;
+	}
+
+	void Update (){
+
+	}
+
+	public void OnScaleSelection(){
+		nextButton.interactable = true;
+	}
+
+
+	public void OnNextButton() {
+
+		nextButton.interactable = false;
+		questionnaireItem = currentItem.ToString ();
+		VASvalue = scrollValue.value.ToString();
+		csvWriter.onNextButtonPressed ();
+
+
+		currentItem ++;
+
+		if (currentItem < questionList.Count) 
+			questionUI.text = questionList [currentItem];
+
+
+		else if (currentItem == questionList.Count) {
+			currentItem = 0;
+			questionList.Clear();
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
+	}
+}
