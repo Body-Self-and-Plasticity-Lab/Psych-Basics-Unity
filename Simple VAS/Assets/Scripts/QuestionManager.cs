@@ -18,7 +18,6 @@ public class QuestionManager : MonoBehaviour {
 
 	private int currentItem;
 
-	public int totalConditions;
 	public static int currentCondition;
 
 	// Use this for initialization
@@ -56,8 +55,8 @@ public class QuestionManager : MonoBehaviour {
 			questionList.Clear();
 			currentCondition = currentCondition + 1;
 
-			if(currentCondition < totalConditions) SceneManager.LoadScene("Inter");
-			else if (currentCondition == totalConditions) SceneManager.LoadScene ("Debriefing");
+			if(currentCondition < ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene("Inter");
+			else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("Debriefing");
 		}
 	}
 }

@@ -484,9 +484,9 @@ MonoBehaviour:
     height: 658
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fc4d0000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: fa34f9fff635f9ffbe51f9fff46bf9ff1c71f9ff6680f9ffa0ccf9ff7edff9ff2ce2f9ff7270faff4c71faffb873faff7277faff668cfaff6497faff7898fafff01afdff64ebffffa6fbffff000000008a2700001c4800005049000048580000c8590000085f0000f05f0000c2610000
+    m_ExpandedIDs: 84c2f9ff8ccbf9ffe67efbffd87ffbff408afbffb2d4feffb8d4feff46e5feff8c08ffff8614ffffb41effff6e31ffff5632ffff5833ffff0a3affff0c3bffff9644ffff7c45ffff1a5efffffe67ffffba95ffff3ea2ffff4aa3ffff26a5fffff6bfffff4cc1ffff54c2ffffd4e6ffff10f7ffff78f8ffff9cfbffff00000000d42a00008c2d000092320000d63f0000a0400000f0460000604e0000a24e0000a6600000de6000002a610000426100006661000084610000ea610000f8610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,13 +566,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.007190245, y: -0.0024025182, z: -0.000017051889, w: -0.9999711}
+    m_Target: {x: -0.0018092338, y: 0.0005974291, z: -0.0000008858042, w: -0.99999774}
     speed: 2
-    m_Value: {x: 0.0071902466, y: -0.0024025186, z: -0.000017051892, w: -0.9999713}
+    m_Value: {x: -0.0018092346, y: 0.0005974294, z: -0.0000008858046, w: -0.9999982}
   m_Size:
-    m_Target: 972.4508
+    m_Target: 785.24915
     speed: 2
-    m_Value: 972.4508
+    m_Value: 785.24915
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -648,19 +648,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: /Users/marte/Projects/Unity/Simple VAS
+  m_LastProjectPath: /Users/marte/Projects/UZH/Experiments/VAS-Unity/Simple VAS
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 08270000
-    m_LastClickedID: 9992
-    m_ExpandedIDs: 000000000827000000ca9a3bffffff7f
+    m_SelectedIDs: ec2a0000
+    m_LastClickedID: 10988
+    m_ExpandedIDs: 000000001427000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -688,7 +688,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000008270000
+    m_ExpandedIDs: 0000000014270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -719,15 +719,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 0000000072230000d221000032220000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Intro
-      m_OriginalName: Intro
+      m_Name: ConditionDictionary
+      m_OriginalName: ConditionDictionary
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11760
+      m_UserData: 27790
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
