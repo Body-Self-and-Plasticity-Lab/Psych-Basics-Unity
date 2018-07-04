@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour {
 
 	public string sceneToLoad;
-
+	public bool changeOnKey;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,11 @@ public class LoadScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		if (changeOnKey)
+			if (Input.GetKeyDown ("space"))
+				OnNextButton ();
 	}
+
 
 	public void OnNextButton () {
 

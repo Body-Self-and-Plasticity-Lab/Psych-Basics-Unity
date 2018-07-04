@@ -1,0 +1,10 @@
+subject ID,age,gender,handedness,question ID,condition,value
+FinalVersionMaybe,41,Female,Rigth handed,0,Self 1PP,1
+FinalVersionMaybe,41,Female,Rigth handed,1,Self 1PP,0
+FinalVersionMaybe,41,Female,Rigth handed,2,Self 1PP,0.5401367
+FinalVersionMaybe,41,Female,Rigth handed,0,Self 3PP,0.2370996
+FinalVersionMaybe,41,Female,Rigth handed,1,Self 3PP,0.8709766
+FinalVersionMaybe,41,Female,Rigth handed,2,Self 3PP,0
+FinalVersionMaybe,41,Female,Rigth handed,0,Other 3PP,1
+FinalVersionMaybe,41,Female,Rigth handed,1,Other 3PP,0.1102148
+FinalVersionMaybe,41,Female,Rigth handed,2,Other 3PP,0.5779785

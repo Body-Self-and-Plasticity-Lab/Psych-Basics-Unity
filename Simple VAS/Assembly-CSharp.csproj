@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BasicDataConfigurations.cs" />
+     <Compile Include="Assets\Scripts\ConditionDictionary.cs" />
      <Compile Include="Assets\Scripts\CsvRead.cs" />
      <Compile Include="Assets\Scripts\CsvWrite.cs" />
+     <Compile Include="Assets\Scripts\DebriefingCsv.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
      <Compile Include="Assets\Scripts\QuestionManager.cs" />
  <Reference Include="UnityEngine.UI">

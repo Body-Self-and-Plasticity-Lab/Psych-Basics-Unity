@@ -1,0 +1,12 @@
+subject ID,age,gender,handedness,question ID,condition,value
+24,23,Female,Left handed,0,o3PP - s3PP - s1PP,0.9119141
+24,23,Female,Left handed,1,o3PP - s3PP - s1PP,0.1107422
+24,23,Female,Left handed,2,o3PP - s3PP - s1PP,0.6465723
+subject ID,age,gender,handedness,question ID,condition,value
+24,23,Female,Left handed,0,o3PP - s3PP - s1PP,0.144541
+24,23,Female,Left handed,1,o3PP - s3PP - s1PP,1
+24,23,Female,Left handed,2,o3PP - s3PP - s1PP,0.1479199
+subject ID,age,gender,handedness,question ID,condition,value
+24,23,Female,Left handed,0,o3PP - s3PP - s1PP,0.8324414
+24,23,Female,Left handed,1,o3PP - s3PP - s1PP,0.08242188
+24,23,Female,Left handed,2,o3PP - s3PP - s1PP,0.6813574

@@ -1,0 +1,8 @@
+subject ID,age,gender,handedness,question ID,condition,value
+Miller,41,Male,Rigth handed,0,s3PP - o3PP - s1PP,0.9477539
+Miller,41,Male,Rigth handed,1,s3PP - o3PP - s1PP,0.1373437
+Miller,41,Male,Rigth handed,2,s3PP - o3PP - s1PP,0.7672364
+subject ID,age,gender,handedness,question ID,condition,value
+Miller,41,Male,Rigth handed,0,s3PP - o3PP - s1PP,0.1580176
+Miller,41,Male,Rigth handed,1,s3PP - o3PP - s1PP,0.9051074
+Miller,41,Male,Rigth handed,2,s3PP - o3PP - s1PP,0.1656445

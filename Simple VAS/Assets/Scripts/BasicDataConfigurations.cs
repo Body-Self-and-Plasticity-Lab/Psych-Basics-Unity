@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BasicDataConfigurations : MonoBehaviour {
 
 	public InputField nameField, ageField;
-	public Text genderField, handednessField, conditionField;
+	public Text genderField, handednessField;
 	public Button nextButton;
 	public static string ID, age, gender, handedness, conditionOrder;
 
@@ -34,7 +34,6 @@ public class BasicDataConfigurations : MonoBehaviour {
 
 		gender = genderField.text;
 		handedness = handednessField.text;
-		conditionOrder = conditionField.text;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
 	}

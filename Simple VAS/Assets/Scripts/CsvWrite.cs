@@ -7,25 +7,33 @@ public class CsvWrite : MonoBehaviour {
 
 
 	private string condition;
+	private static CsvWrite instance = null;
+	public static CsvWrite Instance
+	{
+		get { return instance; }
+	}
 
-	// Use this for initialization
+	//This allows the start function to be called only once.
+	void Awake()
+	{
+		if (instance != null && instance != this) {
+			Destroy(this.gameObject);
+			return;
+		} 
+		else 
+			instance = this;
+
+		DontDestroyOnLoad(this.gameObject);
+	}
+
+
 	void Start () {
 		WriteToFile ("subject ID", "age", "gender", "handedness", "question ID", "condition", "value");
 	}
-
-	// Update is called once per frame
-	void Update () {
-
-	}
+		
 
 	public void onNextButtonPressed(){
-		WriteToFile (BasicDataConfigurations.ID, BasicDataConfigurations.age, BasicDataConfigurations.gender, BasicDataConfigurations.handedness, QuestionManager.questionnaireItem,  BasicDataConfigurations.conditionOrder, QuestionManager.VASvalue);
-
-	}
-
-	public void onBasicDataEntered(){
-		
-			
+		WriteToFile (BasicDataConfigurations.ID, BasicDataConfigurations.age, BasicDataConfigurations.gender, BasicDataConfigurations.handedness, QuestionManager.questionnaireItem,  ConditionDictionary.selectedOrder[QuestionManager.currentCondition], QuestionManager.VASvalue);
 	}
 
 

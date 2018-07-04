@@ -18,6 +18,9 @@ public class QuestionManager : MonoBehaviour {
 
 	private int currentItem;
 
+	public int totalConditions;
+	public static int currentCondition;
+
 	// Use this for initialization
 	void Start () {
 
@@ -25,14 +28,13 @@ public class QuestionManager : MonoBehaviour {
 		questionList = CsvRead.questionnaireInput;
 		questionUI.text = questionList[currentItem];
 		nextButton.interactable = false;
-	}
-
-	void Update (){
 
 	}
-
+		
 	public void OnScaleSelection(){
+		
 		nextButton.interactable = true;
+
 	}
 
 
@@ -43,7 +45,6 @@ public class QuestionManager : MonoBehaviour {
 		VASvalue = scrollValue.value.ToString();
 		csvWriter.onNextButtonPressed ();
 
-
 		currentItem ++;
 
 		if (currentItem < questionList.Count) 
@@ -53,7 +54,10 @@ public class QuestionManager : MonoBehaviour {
 		else if (currentItem == questionList.Count) {
 			currentItem = 0;
 			questionList.Clear();
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			currentCondition = currentCondition + 1;
+
+			if(currentCondition < totalConditions) SceneManager.LoadScene("Inter");
+			else if (currentCondition == totalConditions) SceneManager.LoadScene ("Debriefing");
 		}
 	}
 }

@@ -1,0 +1,12 @@
+subject ID,age,gender,handedness,question ID,condition,value
+HopefullyFinalTest,33,Male,Left handed,0,Self 3PP,0.7380469
+HopefullyFinalTest,33,Male,Left handed,1,Self 3PP,0
+HopefullyFinalTest,33,Male,Left handed,2,Self 3PP,1
+subject ID,age,gender,handedness,question ID,condition,value
+HopefullyFinalTest,33,Male,Left handed,0,Other 3PP,0.5029101
+HopefullyFinalTest,33,Male,Left handed,1,Other 3PP,1
+HopefullyFinalTest,33,Male,Left handed,2,Other 3PP,0
+subject ID,age,gender,handedness,question ID,condition,value
+HopefullyFinalTest,33,Male,Left handed,0,Self 1PP,0
+HopefullyFinalTest,33,Male,Left handed,1,Self 1PP,1
+HopefullyFinalTest,33,Male,Left handed,2,Self 1PP,0.5049024
