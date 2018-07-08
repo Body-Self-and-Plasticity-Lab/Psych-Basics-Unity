@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+namespace SimpleVAS
+{
 public class ConditionDictionary : MonoBehaviour {
 
 	public string condition1, condition2, condition3;
@@ -30,4 +31,6 @@ public class ConditionDictionary : MonoBehaviour {
 		//Debug.Log ("the first condition is " + selectedOrder[0] + " the second condition is " + selectedOrder[1] + " and the last one is " + selectedOrder[2]);
 
 	}
+}
+
 }

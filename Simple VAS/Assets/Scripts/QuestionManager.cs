@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using SimpleVAS;
 
+namespace SimpleVAS
+{
 public class QuestionManager : MonoBehaviour {
 
 	List<string> questionList = new List<string>();
@@ -59,4 +62,5 @@ public class QuestionManager : MonoBehaviour {
 			else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("Debriefing");
 		}
 	}
+}
 }

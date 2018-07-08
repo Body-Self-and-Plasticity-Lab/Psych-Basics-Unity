@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace SimpleVAS 
+{
 public class DebriefingCsv : MonoBehaviour {
 
 
@@ -33,4 +35,6 @@ public class DebriefingCsv : MonoBehaviour {
 		file.WriteLine(stringLine);
 		file.Close();	
 	}
+}
+
 }

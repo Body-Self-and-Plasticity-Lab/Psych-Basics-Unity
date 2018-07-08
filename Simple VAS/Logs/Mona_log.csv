@@ -1,0 +1,10 @@
+subject ID,age,gender,handedness,question ID,condition,value
+Mona,24,Female,Rigth handed,0,Self 1PP,0.95
+Mona,24,Female,Rigth handed,1,Self 1PP,0
+Mona,24,Female,Rigth handed,2,Self 1PP,0.8575
+Mona,24,Female,Rigth handed,0,Self 3PP,0.7375
+Mona,24,Female,Rigth handed,1,Self 3PP,0.025
+Mona,24,Female,Rigth handed,2,Self 3PP,1
+Mona,24,Female,Rigth handed,0,Other 3PP,0.17
+Mona,24,Female,Rigth handed,1,Other 3PP,0.89
+Mona,24,Female,Rigth handed,2,Other 3PP,0.2825

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
 
+namespace SimpleVAS
+{
 public class BasicDataConfigurations : MonoBehaviour {
 
 	public InputField nameField, ageField;
@@ -37,5 +39,7 @@ public class BasicDataConfigurations : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
 	}
+
+}
 
 }

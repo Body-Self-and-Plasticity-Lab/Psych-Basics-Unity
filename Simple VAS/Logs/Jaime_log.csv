@@ -1,0 +1,10 @@
+subject ID,age,gender,handedness,question ID,condition,value
+Jaime,24,Male,Rigth handed,0,Self 1PP,0.91
+Jaime,24,Male,Rigth handed,1,Self 1PP,0.0525
+Jaime,24,Male,Rigth handed,2,Self 1PP,0.59
+Jaime,24,Male,Rigth handed,0,Self 3PP,0.1625
+Jaime,24,Male,Rigth handed,1,Self 3PP,0.925
+Jaime,24,Male,Rigth handed,2,Self 3PP,0.1325
+Jaime,24,Male,Rigth handed,0,Other 3PP,0.9625
+Jaime,24,Male,Rigth handed,1,Other 3PP,0.0525
+Jaime,24,Male,Rigth handed,2,Other 3PP,0.575

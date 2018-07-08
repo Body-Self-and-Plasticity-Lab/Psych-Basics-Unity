@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Text;
 using System.IO;
 
+namespace SimpleVAS
+{
 public class CsvRead : MonoBehaviour {
 
 	public string file;
@@ -67,4 +69,5 @@ public class CsvRead : MonoBehaviour {
 			return false;
 		}
 	}
+}
 }

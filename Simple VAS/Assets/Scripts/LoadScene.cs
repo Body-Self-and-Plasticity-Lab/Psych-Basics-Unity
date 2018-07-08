@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace SimpleVAS
+{
+	
 public class LoadScene : MonoBehaviour {
 
 	public string sceneToLoad;
@@ -29,4 +32,6 @@ public class LoadScene : MonoBehaviour {
 		else
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	} 
+}
+
 }

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SimpleVAS;
 
+namespace SimpleVAS 
+{
 public class CsvWrite : MonoBehaviour {
-
 
 	private string condition;
 	private static CsvWrite instance = null;
@@ -45,4 +47,5 @@ public class CsvWrite : MonoBehaviour {
 		file.WriteLine(stringLine);
 		file.Close();	
 	}
+}
 }
