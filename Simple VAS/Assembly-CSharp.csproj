@@ -51,13 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BasicDataConfigurations.cs" />
-     <Compile Include="Assets\Scripts\ConditionDictionary.cs" />
-     <Compile Include="Assets\Scripts\CsvRead.cs" />
-     <Compile Include="Assets\Scripts\CsvWrite.cs" />
-     <Compile Include="Assets\Scripts\DebriefingCsv.cs" />
-     <Compile Include="Assets\Scripts\LoadScene.cs" />
-     <Compile Include="Assets\Scripts\QuestionManager.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\BasicDataConfigurations.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\ConditionDictionary.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\CsvRead.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\CsvWrite.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\DebriefingCsv.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\LoadScene.cs" />
+     <Compile Include="Assets\SimpleVAS\Scripts\QuestionManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
