@@ -1,9 +1,0 @@
-subject ID,age,gender,handedness,question ID,condition,value
-xx,xx,Female,Rigth handed,0,Self 1PP,0.31125
-xx,xx,Female,Rigth handed,1,Self 1PP,0.89625
-subject ID,age,gender,handedness,question ID,condition,value
-xx,xx,Female,Rigth handed,0,Self 1PP,0.32125
-xx,xx,Female,Rigth handed,1,Self 1PP,0.69625
-xx,xx,Female,Rigth handed,2,Self 1PP,0.28875
-xx,xx,Female,Rigth handed,0,Self 3PP,0.85625
-xx,xx,Female,Rigth handed,1,Self 3PP,0.27375
