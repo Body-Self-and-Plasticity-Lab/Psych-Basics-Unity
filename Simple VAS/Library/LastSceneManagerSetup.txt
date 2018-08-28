@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SimpleVAS/Scenes/Debriefing.unity
+- path: Assets/SimpleVAS/Scenes/Intro.unity
   isLoaded: 1
   isActive: 1
