@@ -1,14 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoadScene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SimpleVAS\Scripts\QuestionManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\BasicDataConfigurations.cs" Line="22" Column="9" />
-      <File FileName="Assets\Scripts\ConditionDictionary.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\CsvWrite.cs" Line="48" Column="1" />
-      <File FileName="Assets\Scripts\DebriefingCsv.cs" Line="8" Column="45" />
-      <File FileName="Assets\Scripts\QuestionManager.cs" Line="6" Column="17" />
-      <File FileName="Assets\Scripts\LoadScene.cs" Line="37" Column="2" />
-      <File FileName="Assets\Scripts\CsvRead.cs" Line="73" Column="2" />
+      <File FileName="Assets\SimpleVAS\Scripts\QuestionManager.cs" Line="56" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

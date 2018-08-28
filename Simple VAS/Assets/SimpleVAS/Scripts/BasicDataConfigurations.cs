@@ -36,7 +36,6 @@ public class BasicDataConfigurations : MonoBehaviour {
 
 		gender = genderField.text;
 		handedness = handednessField.text;
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
 	}
 
