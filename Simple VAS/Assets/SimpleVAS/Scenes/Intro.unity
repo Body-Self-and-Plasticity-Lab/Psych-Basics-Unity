@@ -2459,10 +2459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80319cddac3f54dde8a7926bc3f25238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition1: add corresponding odor name 1
-  condition2: add corresponding odor 2
-  condition3: add corresponding odor 3
-  condition4: add corresponding odor 4
+  condition1: female negative
+  condition2: male positive
+  condition3: male negative
+  condition4: female positive
   conditionOrder: {fileID: 1394922147}
 --- !u!1 &1394922145
 GameObject:
