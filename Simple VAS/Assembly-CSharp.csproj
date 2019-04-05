@@ -66,6 +66,7 @@
     <Compile Include="Assets\SimpleVAS\Scripts\CsvRead.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\CsvWrite.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\DebriefingText.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\ForcedChoiceManager.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\LoadScene.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\QuestionManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">

@@ -485,7 +485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e180e3aac8f104404a6e7b808f011ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: questions
+  fileMale: questions_vas_male
+  fileFemale: questions_vas_female
 --- !u!4 &1493182004
 Transform:
   m_ObjectHideFlags: 0

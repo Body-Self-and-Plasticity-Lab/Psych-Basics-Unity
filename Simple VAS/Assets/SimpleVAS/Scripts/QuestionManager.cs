@@ -17,7 +17,7 @@ namespace SimpleVAS
 
 		public CsvWrite csvWriter;
 
-		public static string questionnaireItem, VASvalue;
+		public static string questionnaireItem, ResponseValue;
 
 		private int currentItem;
 
@@ -44,7 +44,7 @@ namespace SimpleVAS
 		
 			nextButton.interactable = false;
 			questionnaireItem = currentItem.ToString ();
-			VASvalue = scrollValue.value.ToString();
+			ResponseValue = scrollValue.value.ToString();
 			csvWriter.onNextButtonPressed ();
 
 			currentItem ++;

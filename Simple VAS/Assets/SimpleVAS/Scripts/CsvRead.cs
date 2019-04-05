@@ -8,14 +8,17 @@ namespace SimpleVAS
 {
 public class CsvRead : MonoBehaviour {
 
-	public string file;
+	public string fileMale, fileFemale;
 	public static List<string> questionnaireInput  = new List<string>();
 
 
 	// Use this for initialization
 	void Awake () {
-		Load (file, questionnaireInput);
-	}
+            if(BasicDataConfigurations.gender == "Male")
+		        Load (fileMale, questionnaireInput);
+            else
+                Load(fileFemale, questionnaireInput);
+        }
 		
 
 
