@@ -28,6 +28,7 @@ namespace SimpleVAS
             questionList = CsvRead.questionnaireInput;
             questionUI.text = questionList[currentItem];
             nextButton.interactable = false;
+            LabelChanger.instance.NextLabel(currentItem);
 
         }
 
@@ -50,6 +51,7 @@ namespace SimpleVAS
             toggleGroup.SetAllTogglesOff();
 
             currentItem++;
+            LabelChanger.instance.NextLabel(currentItem);
 
             if (currentItem < questionList.Count)
                 questionUI.text = questionList[currentItem];
