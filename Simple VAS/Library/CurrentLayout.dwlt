@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 9
+  controlID: 106
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 107
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 108
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,18 +370,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5e0b0000
     m_LastClickedID: 0
-    m_ExpandedIDs: daf4ffff84f8ffff7af9ffffe6fbffff00000000
+    m_ExpandedIDs: 7e7afeff867bfeff46c5fefffac6feffacc8feffc4c9feff42cbfeff4accfeff58d8feffeadffeffe0e0feffea11ffffa416ffffb418ffff0c1affff301bffff7e1cffff481fffffe474ffffe477ffffdc97ffffa29dffff14afffffeeb2ffffdcb8ffffbaf8ffffe6fbffff00000000ba2e0000e62e0000fc2e00003a4a0000664a00007c4a0000ac4f0000d84f0000ee5200001a53000078530000a4530000a0570000ba570000f0570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Canvas
-      m_OriginalName: Canvas
+      m_Name: Sliding Area
+      m_OriginalName: Sliding Area
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 12436
+      m_UserData: 12016
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 541.5, y: 288.5, z: 0}
+    m_Target: {x: 541.5115, y: 288.54214, z: -11.543078}
     speed: 2
-    m_Value: {x: 541.5, y: 288.5, z: 0}
+    m_Value: {x: 541.5115, y: 288.54214, z: -11.543078}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -459,9 +459,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.0018092337, y: 0.0005974291, z: -0.0000008858042, w: -0.9999977}
   m_Size:
-    m_Target: 1062.7166
+    m_Target: 633.9468
     speed: 2
-    m_Value: 1062.7166
+    m_Value: 633.9468
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -607,18 +607,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 0000000072230000d221000032220000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: VAS
+      m_OriginalName: VAS
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 2660
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

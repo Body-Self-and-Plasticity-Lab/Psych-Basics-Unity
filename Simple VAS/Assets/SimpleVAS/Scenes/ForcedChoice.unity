@@ -1043,13 +1043,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftLabelStrings:
-  - yes
-  - yes
-  - female
+  - weiblich
+  - ja
+  - ja
+  - ja
   rightLabelStrings:
-  - no
-  - no
-  - male
+  - "m\xE4nnlich"
+  - nein
+  - nein
+  - nein
   leftLabel: {fileID: 166545876}
   rightLabel: {fileID: 1275810063}
 --- !u!1 &1413072301

@@ -62,8 +62,10 @@ namespace SimpleVAS
 
 
 			else if (currentItem == questionList.Count) {
+                if (SceneManager.GetActiveScene().name == "GenderVAS")
+                    SceneManager.LoadScene("ForcedChoice");
 
-                if(SceneManager.GetActiveScene().name != "VAS_end") { 
+                else if (SceneManager.GetActiveScene().name == "VAS") { 
 				    currentItem = 0;
 				    questionList.Clear();
 				    currentCondition = currentCondition + 1;
@@ -72,7 +74,7 @@ namespace SimpleVAS
 				    else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("VAS_end");
                 }
 
-                else SceneManager.LoadScene("Goodbye");
+                else if (SceneManager.GetActiveScene().name == "VAS_end") SceneManager.LoadScene("Goodbye");
             }
 		}
 	}
