@@ -36,11 +36,21 @@ namespace SimpleVAS
 			
 
 		public void onNextButtonPressed(){
-			if (BasicDataConfigurations.ID == null)
+
+            //Quick hack to prevent error for final vas questionnaire
+            string _currentCondition;
+
+            if (QuestionManager.currentCondition < ConditionDictionary.selectedOrder.Length)
+                _currentCondition = ConditionDictionary.selectedOrder[QuestionManager.currentCondition];
+            else
+                _currentCondition = "na";
+            //
+
+            if (BasicDataConfigurations.ID == null)
 				LoadNull ();
             WriteToFile(BasicDataConfigurations.ID, BasicDataConfigurations.age, BasicDataConfigurations.gender, BasicDataConfigurations.handedness, SceneManager.GetActiveScene().name,
-                QuestionManager.questionnaireItem,  ConditionDictionary.selectedOrder[QuestionManager.currentCondition], QuestionManager.ResponseValue);
-		}
+                QuestionManager.questionnaireItem,  _currentCondition, QuestionManager.ResponseValue);
+        }
 
 		void LoadNull(){
 			string na = "na";

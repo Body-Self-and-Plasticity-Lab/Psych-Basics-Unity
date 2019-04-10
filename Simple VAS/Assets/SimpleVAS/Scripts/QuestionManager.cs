@@ -23,9 +23,14 @@ namespace SimpleVAS
 
 		public static int currentCondition;
 
-		// Use this for initialization
-		void Start () {
+        private void Awake()
+        {
+            csvWriter = FindObjectOfType<CsvWrite>();
+        }
+        // Use this for initialization
+        void Start () {
 
+           
 			currentItem = 0;
 			questionList = CsvRead.questionnaireInput;
 			questionUI.text = questionList[currentItem];
@@ -42,7 +47,7 @@ namespace SimpleVAS
 
 		public void OnNextButton() {
 		
-			nextButton.interactable = false;
+			
 			questionnaireItem = currentItem.ToString ();
 			ResponseValue = scrollValue.value.ToString();
 			csvWriter.onNextButtonPressed ();
@@ -50,6 +55,7 @@ namespace SimpleVAS
 			currentItem ++;
 
             scrollValue.value = 0.5f;
+            nextButton.interactable = false;
 
             if (currentItem < questionList.Count) 
 				questionUI.text = questionList [currentItem];
