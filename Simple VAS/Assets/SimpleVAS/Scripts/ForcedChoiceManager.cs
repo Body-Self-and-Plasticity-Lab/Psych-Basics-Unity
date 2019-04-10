@@ -44,11 +44,14 @@ namespace SimpleVAS
             else
                 QuestionManager.ResponseValue = "0";
 
-            nextButton.interactable = false;
+            
+
             QuestionManager.questionnaireItem = currentItem.ToString();
+
             csvWriter.onNextButtonPressed();
 
             toggleGroup.SetAllTogglesOff();
+            nextButton.interactable = false;
 
             currentItem++;
             LabelChanger.instance.NextLabel(currentItem);

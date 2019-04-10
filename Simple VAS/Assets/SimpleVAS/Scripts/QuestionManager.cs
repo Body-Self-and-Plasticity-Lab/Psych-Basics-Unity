@@ -49,18 +49,25 @@ namespace SimpleVAS
 
 			currentItem ++;
 
-			if (currentItem < questionList.Count) 
+            scrollValue.value = 0.5f;
+
+            if (currentItem < questionList.Count) 
 				questionUI.text = questionList [currentItem];
 
 
 			else if (currentItem == questionList.Count) {
-				currentItem = 0;
-				questionList.Clear();
-				currentCondition = currentCondition + 1;
 
-				if(currentCondition < ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene("Inter");
-				else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("Debriefing");
-			}
+                if(SceneManager.GetActiveScene().name != "VAS_end") { 
+				    currentItem = 0;
+				    questionList.Clear();
+				    currentCondition = currentCondition + 1;
+
+				    if(currentCondition < ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene("Inter");
+				    else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("VAS_end");
+                }
+
+                else SceneManager.LoadScene("Goodbye");
+            }
 		}
 	}
 }

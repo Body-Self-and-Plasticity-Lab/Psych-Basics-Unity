@@ -7,7 +7,7 @@ namespace SimpleVAS
     {
     public class ConditionDictionary : MonoBehaviour {
 
-	    public string condition1, condition2, condition3, condition4;
+	    public string condition1, condition2, condition3, condition4, condition5, condition6;
 	    public Text conditionOrder;
 	    private string inputOrder;
 
@@ -27,7 +27,9 @@ namespace SimpleVAS
 			    if (selectedOrder [i] == "2") selectedOrder[i] = condition2;
 			    if (selectedOrder [i] == "3") selectedOrder[i] = condition3;
                 if (selectedOrder[i] == "4") selectedOrder[i] = condition4;
-                }
+                if (selectedOrder[i] == "5") selectedOrder[i] = condition5;
+                if (selectedOrder[i] == "6") selectedOrder[i] = condition6;
+            }
 
 		    //Debug.Log ("the first condition is " + selectedOrder[0] + " the second condition is " + selectedOrder[1] + " and the last one is " + selectedOrder[2]);
 
