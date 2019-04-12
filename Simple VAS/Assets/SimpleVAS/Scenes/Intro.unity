@@ -2460,11 +2460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   condition1: female negative
-  condition2: male positive
-  condition3: male negative
+  condition2: male negative
+  condition3: male positive
   condition4: female positive
-  condition5: other smell 1
-  condition6: other smell 2
+  condition5: other smell negative
+  condition6: other smell positive
   conditionOrder: {fileID: 1394922147}
 --- !u!1 &1394922145
 GameObject:

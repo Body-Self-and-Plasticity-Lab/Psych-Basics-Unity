@@ -71,10 +71,10 @@ namespace SimpleVAS
 				    currentCondition = currentCondition + 1;
 
 				    if(currentCondition < ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene("Inter");
-				    else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("VAS_end");
+					else if (currentCondition == ConditionDictionary.selectedOrder.Length) SceneManager.LoadScene ("Before end");
                 }
 
-                else if (SceneManager.GetActiveScene().name == "VAS_end") SceneManager.LoadScene("Goodbye");
+                else if (SceneManager.GetActiveScene().name == "Before end") SceneManager.LoadScene("Goodbye");
             }
 		}
 	}
