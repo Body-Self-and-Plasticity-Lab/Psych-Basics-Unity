@@ -37,17 +37,18 @@ namespace SimpleVAS
 			
 			nextButton.interactable = true;
 
-		}
+        }
 
 
 		public void OnNextButton() {
 		
 			nextButton.interactable = false;
-			questionnaireItem = currentItem.ToString ();
+            questionnaireItem = currentItem.ToString ();
 			VASvalue = scrollValue.value.ToString();
 			csvWriter.onNextButtonPressed ();
 
-			currentItem ++;
+            scrollValue.value = 0.5f;
+            currentItem ++;
 
 			if (currentItem < questionList.Count) 
 				questionUI.text = questionList [currentItem];
