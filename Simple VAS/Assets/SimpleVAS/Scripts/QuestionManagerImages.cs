@@ -9,7 +9,8 @@ namespace SimpleVAS
     public class QuestionManagerImages : MonoBehaviour
     {
 
-        List<Sprite> questionList = new List<Sprite>();
+        private List<Sprite> questionList = new List<Sprite>();
+        private List<int> indexList = new List<int>();
 
         public Image _image;
         public Button nextButton;
@@ -17,18 +18,39 @@ namespace SimpleVAS
         public ToggleGroup toggleGroup;
 
         public CsvWrite csvWriter;
+        public bool shuffle;
 
         private int currentItem;
 
         // Use this for initialization
         void Start()
         {
-
-            currentItem = 0;
             questionList = ImageRead.imageSprites;
+
+            for (int i = 0; i < questionList.Count; i++) { 
+                indexList.Add(i);
+                Debug.Log("added " + i);
+            }
+            if (!shuffle)
+                currentItem = 0;
+            else
+                currentItem = Shuffle();
+
+            Debug.Log(currentItem);
+
+            
             _image.sprite = questionList[currentItem];
             nextButton.interactable = false;
 
+        }
+
+        private int Shuffle()
+        {
+            int randomIndex = Random.Range(0, indexList.Count);
+            int selectedItem = indexList[randomIndex];
+            indexList.RemoveAt(randomIndex);
+
+            return randomIndex;
         }
 
         public void OnToggleSelection()
@@ -57,7 +79,10 @@ namespace SimpleVAS
 
             toggleGroup.SetAllTogglesOff();
 
-            currentItem++;
+            if (shuffle)
+                currentItem++;
+            else
+                currentItem = Shuffle();
 
             if (currentItem < questionList.Count)
                 _image.sprite = questionList[currentItem];
