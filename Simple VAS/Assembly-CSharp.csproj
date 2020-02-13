@@ -67,8 +67,10 @@
     <Compile Include="Assets\SimpleVAS\Scripts\CsvWrite.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\DebriefingText.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\ForcedChoiceManager.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\ImageRead.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\LoadScene.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\QuestionManager.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\QuestionManagerImages.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Marte/Documents/GitHub/VAS-Unity/Simple VAS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
