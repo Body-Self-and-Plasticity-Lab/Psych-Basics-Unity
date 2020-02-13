@@ -1310,6 +1310,7 @@ MonoBehaviour:
   nextButton: {fileID: 1759178714}
   toggleGroup: {fileID: 12862797}
   csvWriter: {fileID: 1493182002}
+  shuffle: 1
 --- !u!114 &928450398
 MonoBehaviour:
   m_ObjectHideFlags: 0
