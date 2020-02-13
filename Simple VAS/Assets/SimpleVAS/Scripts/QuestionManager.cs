@@ -46,8 +46,9 @@ namespace SimpleVAS
 			questionnaireItem = currentItem.ToString ();
 			ResponseValue = scrollValue.value.ToString();
 			csvWriter.onNextButtonPressed ();
+            scrollValue.value = 0.5f;
 
-			currentItem ++;
+            currentItem ++;
 
 			if (currentItem < questionList.Count) 
 				questionUI.text = questionList [currentItem];

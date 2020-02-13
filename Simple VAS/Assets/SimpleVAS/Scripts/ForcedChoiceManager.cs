@@ -38,10 +38,16 @@ namespace SimpleVAS
 
         public void OnNextButton() {
 
-            if (toggleYes.isOn)
-                QuestionManager.ResponseValue = "1";
-            else
-                QuestionManager.ResponseValue = "0";
+            Toggle[] numberOfToggles = toggleGroup.GetComponentsInChildren<Toggle>();
+
+            for (int i = 0; i < numberOfToggles.Length; i++)
+            {
+                if (numberOfToggles[i].isOn)
+                {
+                    QuestionManager.ResponseValue = i.ToString();
+                }
+            }
+
 
             nextButton.interactable = false;
             QuestionManager.questionnaireItem = currentItem.ToString();
