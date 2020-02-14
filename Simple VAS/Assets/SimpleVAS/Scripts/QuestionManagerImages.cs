@@ -22,35 +22,31 @@ namespace SimpleVAS
 
         private int currentItem;
 
-        // Use this for initialization
         void Start()
         {
             questionList = ImageRead.imageSprites;
 
-            for (int i = 0; i < questionList.Count; i++) { 
-                indexList.Add(i);
-                Debug.Log("added " + i);
-            }
             if (!shuffle)
                 currentItem = 0;
-            else
-                currentItem = Shuffle();
 
-            Debug.Log(currentItem);
+            else {
+                for (int i = 0; i < questionList.Count; i++)
+                    indexList.Add(i);
 
-            
+                currentItem = ShuffleValue();
+            }
+
             _image.sprite = questionList[currentItem];
-            nextButton.interactable = false;
-
+            nextButton.interactable = false;           
         }
 
-        private int Shuffle()
+        private int ShuffleValue()
         {
             int randomIndex = Random.Range(0, indexList.Count);
             int selectedItem = indexList[randomIndex];
             indexList.RemoveAt(randomIndex);
 
-            return randomIndex;
+            return selectedItem;
         }
 
         public void OnToggleSelection()
@@ -61,40 +57,49 @@ namespace SimpleVAS
 
         public void OnNextButton()
         {
-
             Toggle[] numberOfToggles = toggleGroup.GetComponentsInChildren<Toggle>();
 
             for (int i = 0; i < numberOfToggles.Length; i++)
-            {
                 if (numberOfToggles[i].isOn)
-                {
                     QuestionManager.ResponseValue = i.ToString();
-                }
-            }
-
 
             nextButton.interactable = false;
             QuestionManager.questionnaireItem = currentItem.ToString();
             csvWriter.onNextButtonPressed();
 
-            toggleGroup.SetAllTogglesOff();
+            toggleGroup.SetAllTogglesOff();              
 
-            if (shuffle)
+            if (!shuffle) {
+
                 currentItem++;
-            else
-                currentItem = Shuffle();
 
-            if (currentItem < questionList.Count)
-                _image.sprite = questionList[currentItem];
+                if (currentItem < questionList.Count)
+                    _image.sprite = questionList[currentItem];
 
+                else if (currentItem == questionList.Count)
+                    QuestionsExhausted();
+            }
 
-            else if (currentItem == questionList.Count)
-            {
-                currentItem = 0;
-                questionList.Clear();
+            else {
 
-                SceneManager.LoadScene("VAS");
+                if (indexList.Count != 0) {
+                    currentItem = ShuffleValue();
+                    _image.sprite = questionList[currentItem];    
+                }
+
+                else if (indexList.Count == 0)
+                    QuestionsExhausted();
             }
         }
+
+        void QuestionsExhausted()
+        {
+            currentItem = 0;
+            questionList.Clear();
+
+            SceneManager.LoadScene("VAS");
+        }
     }
+
+
 }
