@@ -1624,6 +1624,7 @@ MonoBehaviour:
   toggleYes: {fileID: 1324454542}
   toggleGroup: {fileID: 758243680}
   csvWriter: {fileID: 1493182002}
+  shuffle: 1
 --- !u!1 &1413072301
 GameObject:
   m_ObjectHideFlags: 0

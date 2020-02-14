@@ -446,6 +446,7 @@ MonoBehaviour:
   nextButton: {fileID: 2009352318}
   scrollValue: {fileID: 1825505998}
   csvWriter: {fileID: 1493182002}
+  shuffle: 1
 --- !u!1 &1493182001
 GameObject:
   m_ObjectHideFlags: 0
