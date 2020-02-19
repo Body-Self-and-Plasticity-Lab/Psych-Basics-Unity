@@ -2459,9 +2459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80319cddac3f54dde8a7926bc3f25238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition1: Self 1PP
-  condition2: Self 3PP
-  condition3: Other 3PP
+  condition1: female negative
+  condition2: male positive
+  condition3: male negative
+  condition4: female positive
   conditionOrder: {fileID: 1394922147}
 --- !u!1 &1394922145
 GameObject:
@@ -2530,7 +2531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1 2 3
+  m_Text: 1 2 3 4
 --- !u!222 &1394922148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2765,17 +2766,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: 1 2 3
+    - m_Text: 1 2 3 4
       m_Image: {fileID: 0}
-    - m_Text: 1 3 2
+    - m_Text: 1 2 3 4
       m_Image: {fileID: 0}
-    - m_Text: 2 1 3
+    - m_Text: 2 1 3 4
       m_Image: {fileID: 0}
-    - m_Text: 2 3 1
-      m_Image: {fileID: 0}
-    - m_Text: 3 1 2
-      m_Image: {fileID: 0}
-    - m_Text: 3 2 1
+    - m_Text: 2 3 1 4
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
