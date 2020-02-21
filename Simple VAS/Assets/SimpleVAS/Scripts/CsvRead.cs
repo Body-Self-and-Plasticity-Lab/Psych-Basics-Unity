@@ -4,19 +4,22 @@ using UnityEngine;
 using System.Text;
 using System.IO;
 
-namespace UnityPsychBasics
-    {
+namespace UnityPsychBasics {
     public class CsvRead : MonoBehaviour {
 
 	    public string file;
         [HideInInspector]
 	    public List<string> questionnaireInput  = new List<string>();
 
+        public static CsvRead instance;
 
 	    // Use this for initialization
 	    void Awake () {
-		            Load (file, questionnaireInput);
-            }
+            if (instance == null)
+                instance = this;
+
+		    Load (file, questionnaireInput);
+        }
 		
 
 

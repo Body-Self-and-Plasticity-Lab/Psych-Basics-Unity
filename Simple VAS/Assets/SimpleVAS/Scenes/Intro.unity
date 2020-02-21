@@ -960,8 +960,9 @@ GameObject:
   - component: {fileID: 439150149}
   - component: {fileID: 439150148}
   - component: {fileID: 439150147}
+  - component: {fileID: 439150150}
   m_Layer: 0
-  m_Name: CSVFileManager
+  m_Name: FileManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,13 +985,13 @@ MonoBehaviour:
   - gender
   - handedness
   - scene
-  - item
   - condition
+  - item
   - response
   varValues: []
-  item: 
-  condition: 
-  response: 
+  item: 0
+  condition: 0
+  response: 0
 --- !u!114 &439150148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   file: questionnaire
+  questionnaireInput: []
 --- !u!4 &439150149
 Transform:
   m_ObjectHideFlags: 0
@@ -1016,6 +1018,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439150150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439150146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a16b3045d18374c994382f66771397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &463266839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,8 +1385,8 @@ Camera:
   m_GameObject: {fileID: 696028087}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.484, g: 0.472, b: 0.491, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}

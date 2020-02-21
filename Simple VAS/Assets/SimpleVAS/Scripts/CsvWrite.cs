@@ -8,15 +8,16 @@ namespace UnityPsychBasics
 {
 	public class CsvWrite : MonoBehaviour {
 
-        private static CsvWrite instance;
+        public static CsvWrite instance;
 
         [Tooltip("Note that 8 variables are coded in, edit script if this has to change")]
         public List<string> varNames = new List<string>();
         public List<string> varValues = new List<string>();
 
         [HideInInspector]
-        public string item, condition, response;
-
+        public int item, condition;
+        [HideInInspector]
+        public float response;
 
 		//This allows the start function to be called only once.
 		void Awake()
@@ -43,9 +44,9 @@ namespace UnityPsychBasics
             varValues[2] = BasicDataConfigurations.gender;
             varValues[3] = BasicDataConfigurations.handedness;
             varValues[4] = SceneManager.GetActiveScene().name;
-            varValues[5] = item;
-            varValues[6] = condition;
-            varValues[7] = response;
+            varValues[5] = ConditionDictionary.selectedOrder[item];
+            varValues[6] = item.ToString();
+            varValues[7] = response.ToString();
         }
 
         public void SetSingleVariable(string value, int index) {

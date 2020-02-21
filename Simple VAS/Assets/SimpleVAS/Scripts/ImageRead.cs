@@ -8,10 +8,19 @@ namespace UnityPsychBasics
 { 
     public class ImageRead : MonoBehaviour {
 
-	    public static List<Sprite> imageSprites = new List<Sprite>();
+        [HideInInspector]
+	    public List<Sprite> imageSprites = new List<Sprite>();
+
+        public static ImageRead instance;
+
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
+        }
 
         // Use this for initialization
-	    void Start () {
+        void Start () {
 
             string[] filePaths = Directory.GetFiles("./Images/", "*.jpg");
 
