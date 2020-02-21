@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-namespace SimpleVAS { 
+namespace UnityPsychBasics
+{ 
     public class ImageRead : MonoBehaviour {
 
 	    public static List<Sprite> imageSprites = new List<Sprite>();

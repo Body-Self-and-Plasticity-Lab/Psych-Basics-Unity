@@ -4,41 +4,46 @@ using UnityEngine;
 using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
 
-namespace SimpleVAS
+namespace UnityPsychBasics
 {
-public class BasicDataConfigurations : MonoBehaviour {
+    public class BasicDataConfigurations : MonoBehaviour {
 
-	public InputField nameField, ageField;
-	public Text genderField, handednessField;
-	public Button nextButton;
-	public static string ID, age, gender, handedness, conditionOrder;
+	    public InputField nameField, ageField;
+	    public Text genderField, handednessField;
+	    public Button nextButton;
+	    public static string ID, age, gender, handedness, conditionOrder;
 
-	// Use this for initialization
-	void Start () {
-		nextButton.interactable = false;
-	}
+        private CsvWrite _csvWriter;
+
+        private void Awake()
+        {
+           _csvWriter = FindObjectOfType<CsvWrite>();
+        }
+            // Use this for initialization
+            void Start () {
+		    nextButton.interactable = false;
+	    }
 	
-	// Update is called once per frame
-	void Update () {
-		if (ID != null && age != null)
-			nextButton.interactable = true;
-	}
+	    // Update is called once per frame
+	    void Update () {
+		    if (ID != null && age != null)
+			    nextButton.interactable = true;
+	    }
 
-	public void userName() {
-		ID = nameField.text;
-	}
+	    public void userName() {
+		    ID = nameField.text;
+	    }
 
-	public void userAge() {
-		age = ageField.text;
-	}
+	    public void userAge() {
+		    age = ageField.text;
+	    }
 
-	public void OnNextButton () {
+	    public void OnNextButton () {
 
-		gender = genderField.text;
-		handedness = handednessField.text;
+		    gender = genderField.text;
+		    handedness = handednessField.text;
+	    }
 
-	}
-
-}
+    }
 
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-namespace SimpleVAS
+namespace UnityPsychBasics
 {
-    public class QuestionManagerImages : MonoBehaviour
+    public class ForcedChoiceAndLikertImageManager : MonoBehaviour
     {
 
         private List<Sprite> questionList = new List<Sprite>();
@@ -17,10 +17,15 @@ namespace SimpleVAS
 
         public ToggleGroup toggleGroup;
 
-        public CsvWrite csvWriter;
+        private CsvWrite _csvWriter;
         public bool shuffle;
 
         private int currentItem;
+
+        private void Awake()
+        {
+            _csvWriter = FindObjectOfType<CsvWrite>();
+        }
 
         void Start()
         {
@@ -61,11 +66,11 @@ namespace SimpleVAS
 
             for (int i = 0; i < numberOfToggles.Length; i++)
                 if (numberOfToggles[i].isOn)
-                    QuestionManager.ResponseValue = i.ToString();
+                    VASManager.ResponseValue = i.ToString();
 
             nextButton.interactable = false;
-            QuestionManager.questionnaireItem = currentItem.ToString();
-            csvWriter.onNextButtonPressed();
+            VASManager.questionnaireItem = currentItem.ToString();
+            _csvWriter.LogTrial();
 
             toggleGroup.SetAllTogglesOff();              
 

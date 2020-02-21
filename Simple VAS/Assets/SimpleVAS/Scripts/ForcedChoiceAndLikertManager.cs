@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using SimpleVAS;
 
-namespace SimpleVAS
+namespace UnityPsychBasics
 {
-    public class ForcedChoiceManager : MonoBehaviour
+    public class ForcedChoiceAndLikertManager : MonoBehaviour
     {
         List<string> questionList = new List<string>();
         private List<int> indexList = new List<int>();
@@ -17,15 +16,22 @@ namespace SimpleVAS
         public Toggle toggleYes;
         public ToggleGroup toggleGroup;
 
-        public CsvWrite csvWriter;
+        private CsvWrite _csvWriter;
+        private CsvRead _csvReader;
 
         private int currentItem;
         public bool shuffle;
 
+        private void Awake()
+        {
+            _csvWriter = FindObjectOfType<CsvWrite>();
+            _csvReader = FindObjectOfType<CsvRead>();
+        }
         // Use this for initialization
         void Start() {
 
-            questionList = CsvRead.questionnaireInput;
+            for (int i = 0; i < _csvReader.questionnaireInput.Count; i++)
+                questionList.Add(_csvReader.questionnaireInput[i]);
 
             if (!shuffle)
                 currentItem = 0;
@@ -62,14 +68,14 @@ namespace SimpleVAS
             {
                 if (numberOfToggles[i].isOn)
                 {
-                    QuestionManager.ResponseValue = i.ToString();
+                    VASManager.ResponseValue = i.ToString();
                 }
             }
 
 
             nextButton.interactable = false;
-            QuestionManager.questionnaireItem = currentItem.ToString();
-            csvWriter.onNextButtonPressed();
+            VASManager.questionnaireItem = currentItem.ToString();
+            _csvWriter.LogTrial();
 
             toggleGroup.SetAllTogglesOff();       
 

@@ -3,36 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using SimpleVAS;
 
-namespace SimpleVAS
-{
-    public class QuestionManager : MonoBehaviour
-    {
-
-        List<string> questionList = new List<string>();
-        private List<int> indexList = new List<int>();
+namespace UnityPsychBasics {
+    public class VASManager : MonoBehaviour {
 
         public Text questionUI;
         public Button nextButton;
         public Scrollbar scrollValue;
 
-        public CsvWrite csvWriter;
+        private CsvWrite _csvWriter;
+        private CsvRead _csvReader;
 
         public static string questionnaireItem, ResponseValue;
 
         public bool shuffle;
 
+        private List<string> questionList = new List<string>();
+        private List<int> indexList = new List<int>();
         private int currentItem;
 
 
         public static int currentCondition;
 
+        private void Awake() {
+            _csvWriter = FindObjectOfType<CsvWrite>();
+            _csvReader = FindObjectOfType<CsvRead>();
+        }
+
         // Use this for initialization
         void Start()
         {
-
-            questionList = CsvRead.questionnaireInput;
+            for (int i = 0; i <  _csvReader.questionnaireInput.Count; i++)
+                questionList.Add(_csvReader.questionnaireInput[i]);
 
             if (!shuffle)
                 currentItem = 0;
@@ -46,13 +48,12 @@ namespace SimpleVAS
 
             questionUI.text = questionList[currentItem];
             nextButton.interactable = false;
+            
         }
 
         public void OnScaleSelection()
         {
-
             nextButton.interactable = true;
-
         }
 
         private int ShuffleValue()
@@ -66,11 +67,11 @@ namespace SimpleVAS
 
         public void OnNextButton()
         {
-
             nextButton.interactable = false;
             questionnaireItem = currentItem.ToString();
-            ResponseValue = scrollValue.value.ToString();
-            csvWriter.onNextButtonPressed();
+
+            _csvWriter.response = scrollValue.value.ToString();
+            _csvWriter.LogTrial();
             scrollValue.value = 0.5f;
 
             if (!shuffle)
