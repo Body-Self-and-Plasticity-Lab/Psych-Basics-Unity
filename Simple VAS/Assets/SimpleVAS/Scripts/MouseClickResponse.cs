@@ -16,12 +16,15 @@ namespace UnityPsychBasics {
         private void Start()
         {
             _taskManager = TaskManager.instance;
-            _taskManager.setValueOutside = true;
+            if (useMouseClickSelector)
+                _taskManager.setValueOutside = true;
+
 
             if (orderLeft1Right2)
                 mouseResponse = new int[] { 1, 2 };
             else
                 mouseResponse = new int[] { 2, 1 };
+
         }
 
         void Update () {
