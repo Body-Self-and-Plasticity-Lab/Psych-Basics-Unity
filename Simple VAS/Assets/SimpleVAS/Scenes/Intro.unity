@@ -988,7 +988,9 @@ MonoBehaviour:
   - condition
   - item
   - response
+  - response time
   varValues: []
+  responseTime: 
   item: 0
   condition: 0
   response: 0
@@ -1029,6 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a16b3045d18374c994382f66771397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageSprites: []
 --- !u!1 &463266839
 GameObject:
   m_ObjectHideFlags: 0

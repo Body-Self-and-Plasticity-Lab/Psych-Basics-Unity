@@ -10,17 +10,21 @@ namespace UnityPsychBasics {
 
         public Text questionUI;
         public Button nextButton;
-        public Scrollbar _scrollValue;
+        public Scrollbar _scrollbar;
         public ToggleGroup _toggleGroup;
         public Image _image;
 
-        public bool shuffle;
-        public bool useImages;
-        public bool useAnalogueScale;
+        public bool shuffle, useImages, useAnalogueScale, hideResponseInterface;
+
+        [HideInInspector]
+        public bool setValueOutside;
+
+        public static TaskManager instance;
 
         private CsvWrite _csvWriter;
         private CsvRead _csvReader;
         private ImageRead _imageReader;
+        private Timer _timer;
 
         private List<string> questionList = new List<string>();
         private List<Sprite> imageList = new List<Sprite>();
@@ -29,6 +33,9 @@ namespace UnityPsychBasics {
         private int currentItem;
     
         private void Awake() {
+
+            if (instance == null)
+                instance = this;
 
             _csvWriter = CsvWrite.instance;
 
@@ -39,16 +46,27 @@ namespace UnityPsychBasics {
         }
 
         void Start() {
+
             InitializeValuesListsAndObjects();
-            nextButton.interactable = false;           
+            nextButton.interactable = false;
+
+            _timer = Timer.instance;
+            _timer.stopwatch.Start();
         }
 
         private void InitializeValuesListsAndObjects() {
 
-            if (useAnalogueScale)
+            if(hideResponseInterface) {
                 _toggleGroup.gameObject.SetActive(false);
-            else
-                _scrollValue.gameObject.SetActive(false);
+                _scrollbar.gameObject.SetActive(false);
+            }
+
+            else {
+                if (useAnalogueScale)
+                    _toggleGroup.gameObject.SetActive(false);
+                else
+                    _scrollbar.gameObject.SetActive(false);
+            }
 
             if (useImages) {
                 questionUI.gameObject.SetActive(false);
@@ -97,11 +115,14 @@ namespace UnityPsychBasics {
             return selectedItem;
         }
 
+
         public void OnResponseSelection() {
             nextButton.interactable = true;
         }
 
         public void OnNextButton() {
+
+            CsvWrite.instance.responseTime = _timer.ElapsedTimeAndRestart();
 
             nextButton.interactable = false;
 
@@ -109,25 +130,31 @@ namespace UnityPsychBasics {
             _csvWriter.response = ResponseValue();
             _csvWriter.LogTrial();
 
-            _scrollValue.value = 0.5f;
+            _scrollbar.value = 0.5f;
 
             DoAfterSeletion();
         }
 
-        private float ResponseValue(){
+
+        public float ResponseValue(float outsideValue = 0f) {
 
             float currentValue = 0;
 
-            if (!useAnalogueScale) {
-                Toggle[] numberOfToggles = _toggleGroup.GetComponentsInChildren<Toggle>();
+            if (!setValueOutside) {
+                if (!useAnalogueScale) {
+                    Toggle[] numberOfToggles = _toggleGroup.GetComponentsInChildren<Toggle>();
 
-                for (int i = 0; i < numberOfToggles.Length; i++)
-                    if (numberOfToggles[i].isOn)
-                        currentValue = i;
+                    for (int i = 0; i < numberOfToggles.Length; i++)
+                        if (numberOfToggles[i].isOn)
+                            currentValue = i;
+                }
+
+                else
+                    currentValue = _scrollbar.value;
             }
 
             else
-                currentValue = _scrollValue.value;
+                currentValue =  outsideValue;
 
             return currentValue;
         }
@@ -143,6 +170,8 @@ namespace UnityPsychBasics {
 
                     else if (currentItem == imageList.Count)
                         QuestionsExhausted();
+
+                    _timer.stopwatch.Start();
                 }
 
                 else {
@@ -152,7 +181,6 @@ namespace UnityPsychBasics {
                     else if (currentItem == questionList.Count)
                         QuestionsExhausted();
                 }
-
             }
 
             else {
@@ -163,6 +191,8 @@ namespace UnityPsychBasics {
                         _image.sprite = imageList[currentItem];
                     else
                         questionUI.text = questionList[currentItem];
+
+                    _timer.stopwatch.Start();
                 }
 
                 else if (indexList.Count == 0)
@@ -179,7 +209,7 @@ namespace UnityPsychBasics {
             string sceneToLoad = null;
             
             if(LoadSceneAfterTask.instance == null) {
-                Debug.Log("You must attach the LoadSceneAfterTask object somewhere in the scene and add Scene names to it");
+                UnityEngine.Debug.Log("You must attach the LoadSceneAfterTask object somewhere in the scene and add Scene names to it");//else the call is ambiguous for the diagnostics library
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
@@ -191,10 +221,9 @@ namespace UnityPsychBasics {
                     sceneToLoad = LoadSceneAfterTask.instance.afterLastCondition;
 
                 SceneManager.LoadScene(sceneToLoad);
-            }
-                
-
-            
+            }                           
         }
+
     }
+
 }

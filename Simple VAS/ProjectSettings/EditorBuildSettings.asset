@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/SimpleVAS/Scenes/Instructions.unity
     guid: a2e857c7d034a4c318df996af605342f
   - enabled: 1
-    path: Assets/SimpleVAS/Scenes/VAS.unity
+    path: Assets/SimpleVAS/Scenes/Task.unity
     guid: 68b988c63e6274c738f51ba928bf7244
   - enabled: 1
     path: Assets/SimpleVAS/Scenes/Debriefing.unity

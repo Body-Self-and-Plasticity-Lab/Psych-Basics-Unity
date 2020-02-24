@@ -10,10 +10,13 @@ namespace UnityPsychBasics
 
         public static CsvWrite instance;
 
-        [Tooltip("Note that 8 variables are coded in, edit script if this has to change")]
+        [Tooltip("Note that 9 variables are coded in, edit script if this has to change, here you can only change the name")]
         public List<string> varNames = new List<string>();
+        [HideInInspector]
         public List<string> varValues = new List<string>();
 
+        [HideInInspector]
+        public string responseTime;
         [HideInInspector]
         public int item, condition;
         [HideInInspector]
@@ -32,7 +35,9 @@ namespace UnityPsychBasics
             foreach (var item in varNames) { 
                  varValues.Add(null);
             }
+        }
 
+        public void SetColumnNames(){
             WriteToFile(varNames);
         }
 
@@ -47,6 +52,7 @@ namespace UnityPsychBasics
             varValues[5] = ConditionDictionary.selectedOrder[item];
             varValues[6] = item.ToString();
             varValues[7] = response.ToString();
+            varValues[8] = responseTime;
         }
 
         public void SetSingleVariable(string value, int index) {
@@ -64,13 +70,13 @@ namespace UnityPsychBasics
             WriteToFile(varValues);
         }
 
-		void LoadNull(){
+		private void LoadNull(){
             for (int i = 0; i < varValues.Count; i++) {
                 varValues[i] = "na";
             }
 		}
 
-		void WriteToFile(List<string> stringList){
+		private void WriteToFile(List<string> stringList){
 
             string stringLine = string.Join(",", stringList.ToArray());
 

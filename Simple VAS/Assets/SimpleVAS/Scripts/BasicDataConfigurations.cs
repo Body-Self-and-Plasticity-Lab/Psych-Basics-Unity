@@ -17,7 +17,7 @@ namespace UnityPsychBasics
 
         private void Awake()
         {
-           _csvWriter = FindObjectOfType<CsvWrite>();
+           _csvWriter = CsvWrite.instance;
         }
             // Use this for initialization
             void Start () {
@@ -42,6 +42,7 @@ namespace UnityPsychBasics
 
 		    gender = genderField.text;
 		    handedness = handednessField.text;
+            _csvWriter.SetColumnNames();
 	    }
 
     }
