@@ -8,6 +8,8 @@ namespace UnityPsychBasics {
 
         private TaskManager _taskManager;
         public bool useMouseClickSelector;
+
+        [HideInInspector]
         public bool orderLeft1Right2;
 
         private int[] mouseResponse;// = new int[] {1, 2};
@@ -19,6 +21,7 @@ namespace UnityPsychBasics {
             if (useMouseClickSelector)
                 _taskManager.setValueOutside = true;
 
+            orderLeft1Right2 = BasicDataConfigurations.mouseClickOrder;
 
             if (orderLeft1Right2)
                 mouseResponse = new int[] { 1, 2 };

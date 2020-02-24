@@ -11,7 +11,10 @@ namespace UnityPsychBasics
 	    public InputField nameField, ageField;
 	    public Text genderField, handednessField;
 	    public Button nextButton;
+        public Toggle clickOrder;
+
 	    public static string ID, age, gender, handedness, conditionOrder;
+        public static bool mouseClickOrder;
 
         private CsvWrite _csvWriter;
 
@@ -40,6 +43,7 @@ namespace UnityPsychBasics
 
 	    public void OnNextButton () {
 
+            mouseClickOrder = clickOrder.isOn;
 		    gender = genderField.text;
 		    handedness = handednessField.text;
             _csvWriter.SetColumnNames();
