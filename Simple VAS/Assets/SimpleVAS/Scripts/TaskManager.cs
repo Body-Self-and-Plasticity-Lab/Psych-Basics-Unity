@@ -150,6 +150,8 @@ namespace UnityPsychBasics {
                     for (int i = 0; i < numberOfToggles.Length; i++)
                         if (numberOfToggles[i].isOn)
                             currentValue = i;
+
+                    _toggleGroup.SetAllTogglesOff();
                 }
 
                 else
