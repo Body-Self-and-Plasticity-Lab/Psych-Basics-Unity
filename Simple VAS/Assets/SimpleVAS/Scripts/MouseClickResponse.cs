@@ -12,21 +12,22 @@ namespace UnityPsychBasics {
         [HideInInspector]
         public bool orderLeft1Right2;
 
-        private int[] mouseResponse;// = new int[] {1, 2};
+        private float[] mouseResponse;// = new int[] {1, 2};
 
 
         private void Start()
         {
             _taskManager = TaskManager.instance;
+
             if (useMouseClickSelector)
                 _taskManager.setValueOutside = true;
 
             orderLeft1Right2 = BasicDataConfigurations.mouseClickOrder;
 
             if (orderLeft1Right2)
-                mouseResponse = new int[] { 1, 2 };
+                mouseResponse = new float[] { 1, 2 };
             else
-                mouseResponse = new int[] { 2, 1 };
+                mouseResponse = new float[] { 2, 1 };
 
         }
 
@@ -34,12 +35,12 @@ namespace UnityPsychBasics {
 
             if(useMouseClickSelector){
 		        if(Input.GetMouseButtonDown(0)){
-                    _taskManager.ResponseValue(mouseResponse[0]);
+                    _taskManager.OutsideResponseValue(mouseResponse[0]);
                     _taskManager.OnNextButton();
                 }
 
                 if(Input.GetMouseButtonDown(1)) {
-                    _taskManager.ResponseValue(mouseResponse[1]);
+                    _taskManager.OutsideResponseValue(mouseResponse[1]);
                     _taskManager.OnNextButton();
                 }
 

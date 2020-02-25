@@ -52,6 +52,7 @@ namespace UnityPsychBasics {
 
             _timer = Timer.instance;
             _timer.stopwatch.Start();
+
         }
 
         public void InitializeValuesListsAndObjects() {
@@ -130,7 +131,10 @@ namespace UnityPsychBasics {
             nextButton.interactable = false;
 
             _csvWriter.item = currentItem;
-            _csvWriter.response = ResponseValue();
+
+            if (!setValueOutside)
+                _csvWriter.response = ResponseValue();
+
             _csvWriter.LogTrial();
 
             _scrollbar.value = 0.5f;
@@ -139,11 +143,10 @@ namespace UnityPsychBasics {
         }
 
 
-        public float ResponseValue(float outsideValue = 0f) {
+        public float ResponseValue() {
 
             float currentValue = 0;
 
-            if (!setValueOutside) {
                 if (!useAnalogueScale) {
                     Toggle[] numberOfToggles = _toggleGroup.GetComponentsInChildren<Toggle>();
 
@@ -155,13 +158,13 @@ namespace UnityPsychBasics {
                 }
 
                 else
-                    currentValue = _scrollbar.value;
-            }
-
-            else
-                currentValue =  outsideValue;
-
+                    currentValue = _scrollbar.value;          
+            
             return currentValue;
+        }
+
+        public void OutsideResponseValue(float outsideValue){
+            _csvWriter.response = outsideValue;
         }
 
         private void DoAfterSeletion(){
