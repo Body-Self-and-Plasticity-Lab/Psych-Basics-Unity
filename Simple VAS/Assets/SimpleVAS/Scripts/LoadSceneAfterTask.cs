@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadSceneAfterTask : MonoBehaviour {
+namespace UnityPsychBasics
+{
+        public class LoadSceneAfterTask : MonoBehaviour {
 
-    public string beforeLastCondition, afterLastCondition;
+        public string beforeLastCondition, afterLastCondition;
 
-    public static LoadSceneAfterTask instance;
+        public static LoadSceneAfterTask instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
+        }
+
     }
-
 }

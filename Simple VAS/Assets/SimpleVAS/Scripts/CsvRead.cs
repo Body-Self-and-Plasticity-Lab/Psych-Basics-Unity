@@ -7,18 +7,38 @@ using System.IO;
 namespace UnityPsychBasics {
     public class CsvRead : MonoBehaviour {
 
-	    public string file;
+	    public string fileVAS, fileLikert, fileOther;
         [HideInInspector]
 	    public List<string> questionnaireInput  = new List<string>();
 
         public static CsvRead instance;
 
-	    // Use this for initialization
-	    void Awake () {
+        private TaskManager _taskManager;
+        // Use this for initialization
+        void Awake () {
             if (instance == null)
                 instance = this;
+        }
 
-		    Load (file, questionnaireInput);
+        public void SetFileToLoad(){
+
+            questionnaireInput.Clear();
+
+            _taskManager = TaskManager.instance;
+            
+            string file = null;
+
+            if (!_taskManager.setValueOutside) {
+                if (_taskManager.useAnalogueScale)
+                    file = fileVAS;
+                else
+                    file = fileLikert;
+            }
+            else
+                file = fileOther;
+
+            Load(file, questionnaireInput);
+
         }
 		
 

@@ -14,7 +14,7 @@ namespace UnityPsychBasics {
         public ToggleGroup _toggleGroup;
         public Image _image;
 
-        public bool shuffle, useImages, useAnalogueScale, hideResponseInterface;
+        public bool shuffle, useImages, useAnalogueScale;
 
         [HideInInspector]
         public bool setValueOutside;
@@ -56,7 +56,10 @@ namespace UnityPsychBasics {
 
         private void InitializeValuesListsAndObjects() {
 
-            if(hideResponseInterface) {
+            if(!useImages)
+                _csvReader.SetFileToLoad();
+
+            if(setValueOutside) {
                 _toggleGroup.gameObject.SetActive(false);
                 _scrollbar.gameObject.SetActive(false);
             }
@@ -221,7 +224,7 @@ namespace UnityPsychBasics {
                     sceneToLoad = LoadSceneAfterTask.instance.afterLastCondition;
 
                 SceneManager.LoadScene(sceneToLoad);
-            }                           
+            }
         }
 
     }

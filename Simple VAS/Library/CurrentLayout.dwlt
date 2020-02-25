@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 2021
     height: 1120
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 32
 --- !u!114 &3
@@ -206,7 +206,7 @@ MonoBehaviour:
     y: 0
     width: 1612
     height: 1120
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 33
@@ -230,8 +230,8 @@ MonoBehaviour:
     y: 0
     width: 1612
     height: 799
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 34
 --- !u!114 &11
@@ -252,8 +252,8 @@ MonoBehaviour:
     y: 0
     width: 1215
     height: 799
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -323,19 +323,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SimpleVAS/Scripts
+    - Assets/SimpleVAS/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SimpleVAS/Scripts
+  - Assets/SimpleVAS/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Marte\Documents\GitHub\VAS-Unity\Simple VAS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 300b0000
-    m_LastClickedID: 2864
+    m_SelectedIDs: e0090000
+    m_LastClickedID: 2528
     m_ExpandedIDs: 000000005e090000300a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 140d0000
-    m_LastClickedID: 3348
-    m_ExpandedIDs: 80efffffe6fbffff00000000140d0000
+    m_SelectedIDs: 6c890000
+    m_LastClickedID: 35180
+    m_ExpandedIDs: 18e3feff22e7feff5e40fffffc43ffff564bffff2a52ffff1a5dffff0a5effff2669ffffba74ffff5684ffff5aa4ffff00c2ffff6ccfffff58f1ffffe6fbfffff4ffffff00000000240d0000be370000cc4c00001c5000006c890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,7 +532,7 @@ MonoBehaviour:
     height: 778
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 262.0013187
+  lastFramingTime: 1765.9573776
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
@@ -567,13 +567,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.016189778, y: 0.00059661065, z: 0.000009621104, w: -0.9998689}
+    m_Target: {x: -0.00780938, y: -0.0039031846, z: 0.000030443427, w: -0.9999622}
     speed: 2
-    m_Value: {x: 0.016189778, y: 0.00059661065, z: 0.000009621105, w: -0.999869}
+    m_Value: {x: -0.007809378, y: -0.0039031836, z: 0.00003044342, w: -0.999962}
   m_Size:
-    m_Target: 824.5191
+    m_Target: 946.6335
     speed: 2
-    m_Value: 824.5191
+    m_Value: 946.6335
   m_Ortho:
     m_Target: 0
     speed: 2

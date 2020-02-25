@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-namespace UnityPsychBasics 
-{
+namespace UnityPsychBasics {
 	public class CsvWrite : MonoBehaviour {
 
         public static CsvWrite instance;

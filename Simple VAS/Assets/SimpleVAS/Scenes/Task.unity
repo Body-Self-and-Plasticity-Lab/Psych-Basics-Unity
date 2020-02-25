@@ -1280,13 +1280,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionUI: {fileID: 2124150100}
   nextButton: {fileID: 2009352318}
-  _scrollValue: {fileID: 1825505998}
+  _scrollbar: {fileID: 1825505998}
   _toggleGroup: {fileID: 1870235923}
   _image: {fileID: 1475651655}
-  shuffle: 0
-  useImages: 1
+  shuffle: 1
+  useImages: 0
   useAnalogueScale: 1
-  hideResponseInterface: 1
   setValueOutside: 0
 --- !u!4 &1180434043
 Transform:
@@ -1325,7 +1324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffea33e1e665b54ab414344607eb76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMouseClickSelector: 1
+  useMouseClickSelector: 0
   orderLeft1Right2: 0
 --- !u!114 &1180434046
 MonoBehaviour:

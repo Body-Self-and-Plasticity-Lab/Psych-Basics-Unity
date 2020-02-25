@@ -1005,8 +1005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e180e3aac8f104404a6e7b808f011ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: questionnaire
+  fileVAS: questionnaire
+  fileLikert: questionsForced
+  fileOther: questionnaire
   questionnaireInput: []
+  _taskManager: {fileID: 0}
 --- !u!4 &439150149
 Transform:
   m_ObjectHideFlags: 0
