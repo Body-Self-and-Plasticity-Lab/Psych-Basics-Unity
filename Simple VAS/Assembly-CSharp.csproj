@@ -70,6 +70,7 @@
     <Compile Include="Assets\SimpleVAS\Scripts\LoadScene.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\LoadSceneAfterTask.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\MouseClickResponse.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\ScaleSettings.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\TaskManager.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\Timer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
