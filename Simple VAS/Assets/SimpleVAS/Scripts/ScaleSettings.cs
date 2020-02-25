@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,40 +7,60 @@ namespace UnityPsychBasics
     public class ScaleSettings : MonoBehaviour {
 
         public GameObject togglePrefab;
-        public Transform toggleParent;
+        public ToggleGroup toggleGroup;
 
-        public string scaleMin, scaleMid, scaleMax;
+        public GameObject scrollbar;
 
-        public Text minText, midText, maxText;
+        public string minVASLabel, midVASLabel, maxVASLabel;
 
-        public int likertSize;
+        public List<string> likertItems = new List<string>();
 
         private TaskManager _taskManager;
+        private LabelNames _labelNames;
 
         private void Start() {
 
             _taskManager = TaskManager.instance;
+            _labelNames = LabelNames.instance;
 
-            for (int i = 1; i <= likertSize; i++)
-                CreateToggle();
+            if (!_taskManager.useAnalogueScale)
+                for (int i = 0; i < likertItems.Count; i++)
+                    CreateToggle(i);
+
+            else
+                SetAnalogueScaleNames();
+
+            _taskManager.InitializeValuesListsAndObjects();
         }
 
-        private void CreateToggle() {
+        private void CreateToggle(int index) {
 
-            GameObject newToggle = Instantiate(togglePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject _instanciatedPrefab = Instantiate(togglePrefab, new Vector3(0, 0, 0), Quaternion.identity);
 
-            newToggle.transform.SetParent(toggleParent, false);
+            _instanciatedPrefab.transform.SetParent(toggleGroup.gameObject.transform, false);
 
-            //newToggle = toggleGroup;
+            Toggle _toggle = _instanciatedPrefab.GetComponent<Toggle>();
 
-            Toggle toggleBehavior = newToggle.GetComponent<Toggle>();
+            _toggle.GetComponentInChildren<Text>().text = likertItems[index];
 
-            toggleBehavior.onValueChanged.AddListener(delegate { ToggleAction(toggleBehavior); });
+             _toggle.group = toggleGroup;
+
+            _toggle.onValueChanged.AddListener(delegate { ToggleAction(_toggle); });
+        }
+
+        private void SetAnalogueScaleNames(){
+            foreach (Transform child in scrollbar.transform){
+                if (child.name == "Left label")
+                    child.GetComponent<Text>().text = minVASLabel;
+                else if (child.name == "Middle label")
+                    child.GetComponent<Text>().text = midVASLabel;
+                else if (child.name == "Right label")
+                    child.GetComponent<Text>().text = maxVASLabel;
+            }
 
         }
         
         private void ToggleAction(Toggle changed){
-            Debug.Log("toggle pressed");
             _taskManager.OnResponseSelection();
         }
     }

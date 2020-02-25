@@ -47,14 +47,14 @@ namespace UnityPsychBasics {
 
         void Start() {
 
-            InitializeValuesListsAndObjects();
+            //InitializeValuesListsAndObjects();
             nextButton.interactable = false;
 
             _timer = Timer.instance;
             _timer.stopwatch.Start();
         }
 
-        private void InitializeValuesListsAndObjects() {
+        public void InitializeValuesListsAndObjects() {
 
             if(!useImages)
                 _csvReader.SetFileToLoad();

@@ -1006,10 +1006,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileVAS: questionnaire
-  fileLikert: questionsForced
+  fileLikert: questions_forced
   fileOther: questionnaire
   questionnaireInput: []
-  _taskManager: {fileID: 0}
 --- !u!4 &439150149
 Transform:
   m_ObjectHideFlags: 0

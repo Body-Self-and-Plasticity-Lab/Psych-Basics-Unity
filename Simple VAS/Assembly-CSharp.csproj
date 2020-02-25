@@ -67,6 +67,7 @@
     <Compile Include="Assets\SimpleVAS\Scripts\CsvWrite.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\DebriefingText.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\ImageRead.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\LabelNames.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\LoadScene.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\LoadSceneAfterTask.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\MouseClickResponse.cs" />
