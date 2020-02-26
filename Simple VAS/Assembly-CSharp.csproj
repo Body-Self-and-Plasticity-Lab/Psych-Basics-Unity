@@ -61,19 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SimpleVAS\Scripts\BasicDataConfigurations.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\ConditionDictionary.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\CsvRead.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\CsvWrite.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\DebriefingText.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\ImageRead.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\LabelNames.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\LoadScene.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\LoadSceneAfterTask.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\MouseClickResponse.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\ScaleSettings.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\TaskManager.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\Timer.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\BasicDataConfigurations.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\ConditionDictionary.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\CsvRead.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\CsvWrite.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\DebriefingText.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\ImageRead.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\LabelNames.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\LoadSceneAfterTask.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\MouseClickResponse.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\ScaleSettings.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\TaskManager.cs" />
+    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\Timer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Marte/Documents/GitHub/VAS-Unity/Simple VAS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

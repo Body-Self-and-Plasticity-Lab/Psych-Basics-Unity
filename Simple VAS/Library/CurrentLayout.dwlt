@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 9
+  controlID: 39
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 397
     height: 799
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 40
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 41
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,20 +323,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SimpleVAS
+    - Assets/SimpleVAS/SimpleVAS Scenes/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SimpleVAS/Scenes
+  - Assets/SimpleVAS/SimpleVAS Scenes/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Marte\Documents\GitHub\VAS-Unity\Simple VAS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c0a0000
-    m_LastClickedID: 2572
-    m_ExpandedIDs: 000000008a0900005c0a000000ca9a3b
+    m_SelectedIDs: 5a2f0000
+    m_LastClickedID: 12122
+    m_ExpandedIDs: 00000000ec090000720a0000c20a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008a0900005c0a0000
+    m_ExpandedIDs: 00000000ec090000c20a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8c0b0000
+    m_SelectedIDs: 980a00007e0c0000300b0000d60a0000f40b0000de0a0000440b0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 300df5ff5015f5ffaa18f5fffc31f5ffdc35f5ff3642f5ff0a46f5ff70c7f7fff0c7f7ff70c8f7ffdcfbf7ff686cf8ffcc70f8ffa88ef8ffce92f8ffd2a9f8ffb0aaf8ff7ed4f8ff6e1ef9ff3c82f9ff50e3f9ff6ce5f9ff9cf2f9ff8a49faff805efaffa665faff8869faff9c0afbff4465fbff4270fbff76a4fbff32dcfbff60e2fbff82ebfbff6096feff08a5feff8e3fffff5cfbffff00000000840c0000a60c0000c40c0000dc3c0000143d00001c3d0000263d0000bc5e0000e66100000862000030620000e67e0000267f0000bc8f0000
+    m_ExpandedIDs: 38fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
