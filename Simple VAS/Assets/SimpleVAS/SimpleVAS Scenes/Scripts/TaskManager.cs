@@ -232,6 +232,9 @@ namespace UnityPsychBasics {
             }
         }
 
+        private IEnumerator ShowImageForTime(){
+            yield return new WaitForFixedTime(5f); 
+        }
     }
 
 }
