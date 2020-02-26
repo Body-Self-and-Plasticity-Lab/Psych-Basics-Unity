@@ -2,58 +2,82 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using SimpleVAS;
 using UnityEngine.SceneManagement;
 
-namespace SimpleVAS 
-{
+namespace UnityPsychBasics {
 	public class CsvWrite : MonoBehaviour {
 
-		private string condition;
-		private static CsvWrite instance = null;
-		public static CsvWrite Instance
-		{
-			get { return instance; }
-		}
+        public static CsvWrite instance;
+
+        [Tooltip("Note that 9 variables are coded in, edit script if this has to change, here you can only change the name")]
+        public List<string> varNames = new List<string>();
+        [HideInInspector]
+        public List<string> varValues = new List<string>();
+
+        [HideInInspector]
+        public string responseTime;
+        [HideInInspector]
+        public int item, condition;
+        [HideInInspector]
+        public float response;
 
 		//This allows the start function to be called only once.
 		void Awake()
 		{
-			if (instance != null && instance != this) {
-				Destroy(this.gameObject);
-				return;
-			} 
-			else 
-				instance = this;
+            if (instance == null)
+                instance = this;
 
 			DontDestroyOnLoad(this.gameObject);
 		}
 
-
 		void Start () {
-			WriteToFile ("subject ID", "age", "gender", "handedness", "test", "question ID", "condition", "value");
-		}
+            foreach (var item in varNames) { 
+                 varValues.Add(null);
+            }
+        }
+
+        public void SetColumnNames(){
+            WriteToFile(varNames);
+        }
+
+
+        public void SetVariables ()
+        {
+            varValues[0] = BasicDataConfigurations.ID;
+            varValues[1] = BasicDataConfigurations.age;
+            varValues[2] = BasicDataConfigurations.gender;
+            varValues[3] = BasicDataConfigurations.handedness;
+            varValues[4] = SceneManager.GetActiveScene().name;
+            varValues[5] = ConditionDictionary.selectedOrder[item];
+            varValues[6] = item.ToString();
+            varValues[7] = response.ToString();
+            varValues[8] = responseTime;
+        }
+
+        public void SetSingleVariable(string value, int index) {
+            varValues[index] = value;
+        }
 			
 
-		public void onNextButtonPressed(){
-			if (BasicDataConfigurations.ID == null)
-				LoadNull ();
-            WriteToFile(BasicDataConfigurations.ID, BasicDataConfigurations.age, BasicDataConfigurations.gender, BasicDataConfigurations.handedness, SceneManager.GetActiveScene().name,
-                QuestionManager.questionnaireItem,  ConditionDictionary.selectedOrder[QuestionManager.currentCondition], QuestionManager.ResponseValue);
+		public void LogTrial(){
+            SetVariables();
+            if (BasicDataConfigurations.ID == null)
+                LoadNull();
+            else
+                SetVariables();
+
+            WriteToFile(varValues);
+        }
+
+		private void LoadNull(){
+            for (int i = 0; i < varValues.Count; i++) {
+                varValues[i] = "na";
+            }
 		}
 
-		void LoadNull(){
-			string na = "na";
-			BasicDataConfigurations.ID = na;
-			BasicDataConfigurations.age = na;
-			BasicDataConfigurations.gender = na;
-			BasicDataConfigurations.handedness = na;
-			ConditionDictionary.selectedOrder = new string[3] {na, na, na};
-		}
+		private void WriteToFile(List<string> stringList){
 
-		void WriteToFile(string a, string b, string c, string d, string e, string f, string g, string h){
-
-			string stringLine =  a + "," + b + "," + c + "," + d + "," + e + "," + f + "," + g + "," + h;
+            string stringLine = string.Join(",", stringList.ToArray());
 
 			System.IO.StreamWriter file = new System.IO.StreamWriter("./Logs/" + BasicDataConfigurations.ID + "_log.csv", true);
 			file.WriteLine(stringLine);

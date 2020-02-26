@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SimpleVAS
-    {
+namespace UnityPsychBasics
+{
     public class ConditionDictionary : MonoBehaviour {
 
 	    public string condition1, condition2, condition3, condition4;
