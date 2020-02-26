@@ -9,8 +9,12 @@ namespace UnityPsychBasics
     public class ImageRead : MonoBehaviour {
 
         [HideInInspector]
-	    public List<Sprite> imageSprites = new List<Sprite>();
+	    public List<Sprite> imageSprites1 = new List<Sprite>();
+        public List<Sprite> imageSprites2 = new List<Sprite>();
 
+        public string directoryList1, directoryList2;
+        
+        
         public static ImageRead instance;
 
         private void Awake()
@@ -22,13 +26,21 @@ namespace UnityPsychBasics
         // Use this for initialization
         void Start () {
 
-            string[] filePaths = Directory.GetFiles("./Images/", "*.jpg");
+            string[] filePaths = Directory.GetFiles(directoryList1, "*.jpg");//"./Images/"
 
-            foreach(string path in filePaths) {
+            foreach (string path in filePaths) {
                 Texture2D spriteTexture = LoadTexture(path);
-                imageSprites.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+                imageSprites1.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
             }
-        
+
+            filePaths = Directory.GetFiles(directoryList2, "*.jpg");
+
+            foreach (string path in filePaths)
+            {
+                Texture2D spriteTexture = LoadTexture(path);
+                imageSprites2.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+            }
+
         }
 
         public Texture2D LoadTexture(string FilePath) //adapted from https://forum.unity.com/threads/generating-sprites-dynamically-from-png-or-jpeg-files-in-c.343735/

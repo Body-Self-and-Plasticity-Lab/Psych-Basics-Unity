@@ -531,7 +531,9 @@ MonoBehaviour:
   shuffle: 1
   useImages: 1
   useAnalogueScale: 0
+  showImageForTime: 1
   setValueOutside: 0
+  allowInput: 0
 --- !u!4 &1180434043
 Transform:
   m_ObjectHideFlags: 0
@@ -569,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffea33e1e665b54ab414344607eb76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMouseClickSelector: 0
+  useMouseClickSelector: 1
   orderLeft1Right2: 0
 --- !u!114 &1180434046
 MonoBehaviour:

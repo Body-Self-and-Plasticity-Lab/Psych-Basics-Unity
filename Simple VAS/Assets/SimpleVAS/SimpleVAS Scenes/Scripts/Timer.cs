@@ -23,10 +23,11 @@ namespace UnityPsychBasics
             stopwatch.Stop();
 
             TimeSpan _timeSpan = stopwatch.Elapsed;
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}", _timeSpan.Minutes, _timeSpan.Seconds, _timeSpan.Milliseconds);
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:000}", _timeSpan.Minutes, _timeSpan.Seconds, _timeSpan.Milliseconds);
 
             stopwatch.Reset();
 
+            UnityEngine.Debug.Log(elapsedTime);
             return elapsedTime;
         }
     }

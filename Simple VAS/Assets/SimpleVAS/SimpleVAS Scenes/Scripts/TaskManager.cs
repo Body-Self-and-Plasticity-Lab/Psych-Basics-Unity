@@ -15,9 +15,12 @@ namespace UnityPsychBasics {
         public Image _image;
 
         public bool shuffle, useImages, useAnalogueScale;
+        public float showImageForTime;
 
         [HideInInspector]
         public bool setValueOutside;
+        [HideInInspector]
+        public bool allowInput;
 
         public static TaskManager instance;
 
@@ -27,7 +30,10 @@ namespace UnityPsychBasics {
         private Timer _timer;
 
         private List<string> questionList = new List<string>();
+
         private List<Sprite> imageList = new List<Sprite>();
+        private List<Sprite> imageList2 = new List<Sprite>();
+
         private List<int> indexList = new List<int>();
 
         private int currentItem;
@@ -51,7 +57,6 @@ namespace UnityPsychBasics {
             nextButton.interactable = false;
 
             _timer = Timer.instance;
-            _timer.stopwatch.Start();
 
         }
 
@@ -75,16 +80,21 @@ namespace UnityPsychBasics {
             if (useImages) {
                 questionUI.gameObject.SetActive(false);
 
-                for (int i = 0; i < _imageReader.imageSprites.Count; i++)
-                    imageList.Add(_imageReader.imageSprites[i]);
+                for (int i = 0; i < _imageReader.imageSprites1.Count; i++)
+                    imageList.Add(_imageReader.imageSprites1[i]);
+
+                for (int i = 0; i < _imageReader.imageSprites2.Count; i++)
+                    imageList2.Add(_imageReader.imageSprites2[i]);
 
                 if (shuffle)
                     CreateShuffleList();
 
-                _image.sprite = imageList[currentItem];
+                StartCoroutine(ShowImageForTime());
+                //_image.sprite = imageList[currentItem];
             }
 
             else {
+
                 _image.gameObject.SetActive(false);
 
                 for (int i = 0; i < _csvReader.questionnaireInput.Count; i++)
@@ -94,6 +104,7 @@ namespace UnityPsychBasics {
                     CreateShuffleList();
 
                 questionUI.text = questionList[currentItem];
+                _timer.stopwatch.Start();
             }          
            
         }
@@ -174,12 +185,11 @@ namespace UnityPsychBasics {
 
                 if (useImages) {
                     if (currentItem < imageList.Count)
-                        _image.sprite = imageList[currentItem];
+                        StartCoroutine(ShowImageForTime());
 
                     else if (currentItem == imageList.Count)
                         QuestionsExhausted();
-
-                    _timer.stopwatch.Start();
+                   
                 }
 
                 else {
@@ -196,11 +206,11 @@ namespace UnityPsychBasics {
                     currentItem = ShuffleValue();
 
                     if (useImages)
-                        _image.sprite = imageList[currentItem];
-                    else
+                        StartCoroutine(ShowImageForTime());
+                    else {
                         questionUI.text = questionList[currentItem];
-
-                    _timer.stopwatch.Start();
+                        _timer.stopwatch.Start();
+                    }                  
                 }
 
                 else if (indexList.Count == 0)
@@ -233,7 +243,23 @@ namespace UnityPsychBasics {
         }
 
         private IEnumerator ShowImageForTime(){
-            yield return new WaitForFixedTime(5f); 
+
+            allowInput = false;
+
+            _image.gameObject.SetActive(true);
+            _image.sprite = imageList[currentItem];
+
+            yield return new WaitForFixedTime(showImageForTime);
+
+            _image.sprite = imageList2[currentItem];
+
+            yield return new WaitForFixedTime(showImageForTime);
+
+            _image.gameObject.SetActive(false);
+
+            _timer.stopwatch.Start();
+            allowInput = true;
+
         }
     }
 

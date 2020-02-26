@@ -1033,7 +1033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a16b3045d18374c994382f66771397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageSprites: []
+  imageSprites1: []
+  imageSprites2: []
+  directoryList1: ./Images/Questions
+  directoryList2: ./Images/Answers
 --- !u!1 &463266839
 GameObject:
   m_ObjectHideFlags: 0
