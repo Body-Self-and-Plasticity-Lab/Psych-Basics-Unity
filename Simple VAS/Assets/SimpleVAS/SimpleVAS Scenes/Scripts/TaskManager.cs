@@ -155,7 +155,8 @@ namespace UnityPsychBasics {
                             currentValue = i;
 
                     _toggleGroup.SetAllTogglesOff();
-                }
+                    nextButton.interactable = false;
+            }
 
                 else
                     currentValue = _scrollbar.value;          
