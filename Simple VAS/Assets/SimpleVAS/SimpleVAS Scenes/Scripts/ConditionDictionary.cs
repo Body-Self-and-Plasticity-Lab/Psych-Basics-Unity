@@ -3,35 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UnityPsychBasics
-{
+namespace UnityPsychBasics {
     public class ConditionDictionary : MonoBehaviour {
 
-	    public string condition1, condition2, condition3, condition4;
-	    public Text conditionOrder;
-	    private string inputOrder;
+        public List<string> conditions = new List<string>();
+        public Dropdown conditionDropdown;
 
-	    public static string[] selectedOrder;
+        [HideInInspector]
+        public static string[] selectedOrder;
 
-	    // Use this for initialization
-	    void Start () {
-		    //string[] items = conditionOrder.text.Split(' ');
-	    }
+        // Use this for initialization
+        void Start () {
 
-	    public void OnNextButtonPressed () {
+            conditionDropdown.ClearOptions();
 
-		    selectedOrder = conditionOrder.text.Split(' ');
+            List<string> _dropDownOptions = new List<string>();
 
-		    for (int i = 0; i < selectedOrder.Length; i++) {
-			    if (selectedOrder [i] == "1") selectedOrder[i] = condition1;
-			    if (selectedOrder [i] == "2") selectedOrder[i] = condition2;
-			    if (selectedOrder [i] == "3") selectedOrder[i] = condition3;
-                if (selectedOrder[i] == "4") selectedOrder[i] = condition4;
+            foreach (List<string> permu in Permutate(conditions, conditions.Count)) {
+                string _option = string.Join(" ", permu.ToArray());
+                _dropDownOptions.Add(_option);
+            }
+
+            conditionDropdown.AddOptions(_dropDownOptions);
+        }
+	
+        private void RotateRight(List<string> sequence, int count) {
+            string tmp = sequence[count - 1];
+            sequence.RemoveAt(count - 1);
+            sequence.Insert(0, tmp);
+        }
+
+        //from https://www.codeproject.com/Articles/43767/A-C-List-Permutation-Iterator
+        private IEnumerable<IList> Permutate(List<string> sequence, int count) {
+            if (count == 1) yield return sequence;
+            else {
+                for (int i = 0; i < count; i++) {
+                    foreach (var perm in Permutate(sequence, count - 1))
+                        yield return perm;
+                    RotateRight(sequence, count);
                 }
+            }
+        }
 
-		    //Debug.Log ("the first condition is " + selectedOrder[0] + " the second condition is " + selectedOrder[1] + " and the last one is " + selectedOrder[2]);
 
-	    }
+        public void SelectOrder() {
+            selectedOrder = conditionDropdown.options[conditionDropdown.value].text.Split(' ');
+        }
     }
-
 }
