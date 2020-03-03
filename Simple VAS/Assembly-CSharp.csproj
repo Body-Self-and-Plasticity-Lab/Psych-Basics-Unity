@@ -61,19 +61,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\BasicDataConfigurations.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\ConditionDictionary.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\CsvRead.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\CsvWrite.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\DebriefingText.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\ImageRead.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\LabelNames.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\LoadScene.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\LoadSceneAfterTask.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\MouseClickResponse.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\ScaleSettings.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\TaskManager.cs" />
-    <Compile Include="Assets\SimpleVAS\SimpleVAS Scenes\Scripts\Timer.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\BasicDataConfigurations.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ConditionDictionary.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\CsvRead.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\CsvWrite.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\DebriefingText.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ImageRead.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LabelNames.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LoadScene.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LoadSceneAfterTask.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\MouseClickResponse.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ScaleSettings.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\TaskManager.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\Timer.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\Reticle.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\SelectionRadial.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRButton.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRCameraUI.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VREyeRaycaster.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRInput.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRInteractiveItem.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRSlider.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRToggle.cs" />
+    <Compile Include="Assets\VR UI Head interactions\Scripts\ExampleInteractions.cs" />
+    <None Include="Assets\SimpleVAS\Graphics\UIOverlay.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Marte/Documents/GitHub/VAS-Unity/Simple VAS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
