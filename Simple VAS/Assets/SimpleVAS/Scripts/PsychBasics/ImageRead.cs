@@ -10,6 +10,7 @@ namespace UnityPsychBasics
 
         [HideInInspector]
 	    public List<Sprite> imageSprites = new List<Sprite>();
+        public string format;
 
         public static ImageRead instance;
 
@@ -22,7 +23,7 @@ namespace UnityPsychBasics
         // Use this for initialization
         void Start () {
 
-            string[] filePaths = Directory.GetFiles("./Images/", "*.jpg");
+            string[] filePaths = Directory.GetFiles("./Images/", "*." + format);
 
             foreach(string path in filePaths) {
                 Texture2D spriteTexture = LoadTexture(path);
