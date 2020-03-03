@@ -836,6 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageSprites: []
+  format: .png
 --- !u!4 &335548857
 Transform:
   m_ObjectHideFlags: 0

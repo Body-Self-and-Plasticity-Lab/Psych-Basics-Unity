@@ -31,6 +31,8 @@ namespace UnityPsychBasics {
         private List<int> indexList = new List<int>();
 
         private int currentItem;
+
+        private Vector2 imageProjectionSize;
     
         private void Awake() {
 
@@ -73,6 +75,8 @@ namespace UnityPsychBasics {
             }
 
             if (useImages) {
+                imageProjectionSize = new Vector2(_image.rectTransform.rect.width, _image.rectTransform.rect.height);
+
                 questionUI.gameObject.SetActive(false);
 
                 for (int i = 0; i < _imageReader.imageSprites.Count; i++)
@@ -81,7 +85,8 @@ namespace UnityPsychBasics {
                 if (shuffle)
                     CreateShuffleList();
 
-                _image.sprite = imageList[currentItem];
+                SetImage();
+
             }
 
             else {
@@ -175,7 +180,7 @@ namespace UnityPsychBasics {
 
                 if (useImages) {
                     if (currentItem < imageList.Count)
-                        _image.sprite = imageList[currentItem];
+                        SetImage();
 
                     else if (currentItem == imageList.Count)
                         QuestionsExhausted();
@@ -197,7 +202,8 @@ namespace UnityPsychBasics {
                     currentItem = ShuffleValue();
 
                     if (useImages)
-                        _image.sprite = imageList[currentItem];
+                        SetImage();
+
                     else
                         questionUI.text = questionList[currentItem];
 
@@ -209,6 +215,12 @@ namespace UnityPsychBasics {
             }
         }
 
+        private void SetImage(){
+            
+            _image.sprite = imageList[currentItem];
+            float ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
+            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);            //_image.GetComponent<RectTransform>().rect.height*ratio
+        }
 
 
         private void QuestionsExhausted() {

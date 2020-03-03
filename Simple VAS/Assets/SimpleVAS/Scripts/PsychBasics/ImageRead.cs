@@ -23,7 +23,7 @@ namespace UnityPsychBasics
         // Use this for initialization
         void Start () {
 
-            string[] filePaths = Directory.GetFiles("./Images/", "*." + format);
+            string[] filePaths = Directory.GetFiles("./Images/", "*" + format);
 
             foreach(string path in filePaths) {
                 Texture2D spriteTexture = LoadTexture(path);
