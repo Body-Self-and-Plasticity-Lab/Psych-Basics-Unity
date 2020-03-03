@@ -37,6 +37,8 @@ namespace UnityPsychBasics {
         private List<int> indexList = new List<int>();
 
         private int currentItem;
+
+        private Vector2 imageProjectionSize;
     
         private void Awake() {
 
@@ -78,6 +80,8 @@ namespace UnityPsychBasics {
             }
 
             if (useImages) {
+                imageProjectionSize = new Vector2(_image.rectTransform.rect.width, _image.rectTransform.rect.height);
+
                 questionUI.gameObject.SetActive(false);
 
                 for (int i = 0; i < _imageReader.imageSprites1.Count; i++)
@@ -207,8 +211,10 @@ namespace UnityPsychBasics {
                     currentItem = ShuffleValue();
 
                     if (useImages)
+
                         StartCoroutine(ShowImageForTime());
                     else {
+
                         questionUI.text = questionList[currentItem];
                         _timer.stopwatch.Start();
                     }                  
@@ -250,9 +256,14 @@ namespace UnityPsychBasics {
             _image.gameObject.SetActive(true);
             _image.sprite = imageList[currentItem];
 
+            float ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
+            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);
+
             yield return new WaitForFixedTime(showImageForTime);
 
             _image.sprite = imageList2[currentItem];
+            float ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
+            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);
 
             yield return new WaitForFixedTime(showImageForTime);
 

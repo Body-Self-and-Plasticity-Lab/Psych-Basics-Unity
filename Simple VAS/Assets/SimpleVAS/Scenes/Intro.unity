@@ -839,6 +839,7 @@ MonoBehaviour:
   imageSprites2: []
   directoryList1: ./Images/Questions/
   directoryList2: ./Images/Answers/
+  format: .png
 --- !u!4 &335548857
 Transform:
   m_ObjectHideFlags: 0

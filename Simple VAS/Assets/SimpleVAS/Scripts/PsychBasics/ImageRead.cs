@@ -11,6 +11,7 @@ namespace UnityPsychBasics
         [HideInInspector]
 	    public List<Sprite> imageSprites1 = new List<Sprite>();
         public List<Sprite> imageSprites2 = new List<Sprite>();
+        public string format;
 
         public string directoryList1, directoryList2;
         
@@ -26,14 +27,15 @@ namespace UnityPsychBasics
         // Use this for initialization
         void Start () {
 
-            string[] filePaths = Directory.GetFiles(directoryList1, "*.jpg");//"./Images/"
+
+            string[] filePaths = Directory.GetFiles(directoryList1, "*" + format);
 
             foreach (string path in filePaths) {
                 Texture2D spriteTexture = LoadTexture(path);
                 imageSprites1.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
             }
 
-            filePaths = Directory.GetFiles(directoryList2, "*.jpg");
+            filePaths = Directory.GetFiles(directoryList2, "*" + format);
 
             foreach (string path in filePaths)
             {
