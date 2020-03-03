@@ -74,6 +74,7 @@
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ScaleSettings.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\TaskManager.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\Timer.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\WaitForFixedTime.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\VRUI\Reticle.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\VRUI\SelectionRadial.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRButton.cs" />

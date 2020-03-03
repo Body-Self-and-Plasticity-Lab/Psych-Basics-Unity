@@ -443,12 +443,14 @@ MonoBehaviour:
   _scrollbar: {fileID: 1825505998}
   _toggleGroup: {fileID: 1870235923}
   _image: {fileID: 1475651655}
-  shuffle: 1
+  shuffle: 0
   useImages: 1
   useAnalogueScale: 0
-  showImageForTime: 1
+  showImageForTime: 5
   setValueOutside: 0
   allowInput: 0
+  imageList: []
+  imageList2: []
 --- !u!4 &1180434043
 Transform:
   m_ObjectHideFlags: 0
@@ -518,11 +520,8 @@ MonoBehaviour:
   midVASLabel: medium
   maxVASLabel: high
   likertItems:
-  - strongly disagree
-  - mildly disagree
-  - neither
-  - mildly agree
-  - mildly disagree
+  - yes
+  - no
 --- !u!1 &1284041086
 GameObject:
   m_ObjectHideFlags: 0

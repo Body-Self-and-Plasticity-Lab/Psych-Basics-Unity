@@ -31,8 +31,8 @@ namespace UnityPsychBasics {
 
         private List<string> questionList = new List<string>();
 
-        private List<Sprite> imageList = new List<Sprite>();
-        private List<Sprite> imageList2 = new List<Sprite>();
+        public List<Sprite> imageList = new List<Sprite>();
+        public List<Sprite> imageList2 = new List<Sprite>();
 
         private List<int> indexList = new List<int>();
 
@@ -262,7 +262,8 @@ namespace UnityPsychBasics {
             yield return new WaitForFixedTime(showImageForTime);
 
             _image.sprite = imageList2[currentItem];
-            float ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
+
+            ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
             _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);
 
             yield return new WaitForFixedTime(showImageForTime);
