@@ -323,20 +323,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SimpleVAS/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SimpleVAS/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Marte\Documents\GitHub\VAS-Unity\Simple VAS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b20b0000
-    m_LastClickedID: 2994
-    m_ExpandedIDs: 000000007a090000560a0000960a0000640b00001a2f000000ca9a3b
+    m_SelectedIDs: 7a090000
+    m_LastClickedID: 2426
+    m_ExpandedIDs: 000000007a090000560a0000660a0000960a0000640b00001a2f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 6af0ffff720900005adaffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2470000
-    m_LastClickedID: 18386
-    m_ExpandedIDs: dc44ffffd445ffff988affffa88affff888fffff089afffffeebffffaef5ffffe6fbffff00000000a2430000
+    m_SelectedIDs: 9a0b0000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 98e2ffffd8e5ffffe6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 10, z: 50}
+    m_Target: {x: 659.03125, y: 389.4375, z: 7.125}
     speed: 2
-    m_Value: {x: 0, y: 10, z: 50}
+    m_Value: {x: 659.03125, y: 389.4375, z: 7.125}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -567,13 +567,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.02066895, y: 0.04407327, z: 0.0009119342, w: -0.998814}
+    m_Target: {x: 0.020668948, y: 0.04407327, z: 0.0009119342, w: -0.998814}
     speed: 2
-    m_Value: {x: 0.020668948, y: 0.04407327, z: 0.0009119342, w: -0.998814}
+    m_Value: {x: 0.02066895, y: 0.044073272, z: 0.00091193424, w: -0.99881405}
   m_Size:
-    m_Target: 88.98049
+    m_Target: 957.343
     speed: 2
-    m_Value: 88.98049
+    m_Value: 957.343
   m_Ortho:
     m_Target: 1
     speed: 2
