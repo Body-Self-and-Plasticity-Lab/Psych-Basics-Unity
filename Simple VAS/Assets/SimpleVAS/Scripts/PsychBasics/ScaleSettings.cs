@@ -31,11 +31,14 @@ namespace UnityPsychBasics
 
         private void Start() {
 
-
-
         }
 
         public void CreateToggles(){
+
+            foreach(Transform child in toggleGroup.GetComponent<Transform>()){
+                GameObject.Destroy(child.gameObject);
+            }
+
             if (!_taskManager.useAnalogueScale)
                 for (int i = 0; i < likertItems.Count; i++)
                     CreateToggle(i);

@@ -36,42 +36,45 @@ namespace UnityPsychBasics
             _taskManager = TaskManager.instance;
         }
 
-        private void Start()
-        {
+        private void Start() {
             if (withinScene)
-            {
-                SetWithinConditions();
-            }
+                SetWithinConditions(false);
         }
 
 
         public void LoadBeforeLast() {
             if (!withinScene)
                 SceneManager.LoadScene(sceneBeforeLastCondition);
-
-            else {
-                SetWithinConditions();
-                
-            }
+            else 
+                SetWithinConditions(false);                         
         }
 
-        private void SetWithinConditions() {
+        public void LoadAfterLast() {
+            if (!withinScene)
+                SceneManager.LoadScene(sceneAfterLastCondition);
+            else
+                SetWithinConditions(true);
+        }
 
-            if(currentTask < useImage.Count){
+        private void SetWithinConditions(bool isLast) {
+
+            if (currentTask < useImage.Count) {
                 _taskManager.useImages = useImage[currentTask];
                 _taskManager.useAnalogueScale = analogueScale[currentTask];
                 _taskManager.shuffle = shuffle[currentTask];
-                currentTask++;
-                Debug.Log("current task is " + currentTask);
+                
                 _taskManager.InitializeValuesListsAndObjects();
+
+                currentTask++;
             }
-            else
-                SceneManager.LoadScene(sceneBeforeLastCondition);
-        }
 
+            else {
+                if(!isLast)
+                    SceneManager.LoadScene(sceneBeforeLastCondition);
+                else
+                    SceneManager.LoadScene(sceneAfterLastCondition);
+            }
 
-        public void LoadAfterLast(){
-                SceneManager.LoadScene(sceneAfterLastCondition);
         }
 
                 
