@@ -83,7 +83,6 @@
     <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRInteractiveItem.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRSlider.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\VRUI\VRToggle.cs" />
-    <Compile Include="Assets\VR UI Head interactions\Scripts\ExampleInteractions.cs" />
     <None Include="Assets\SimpleVAS\Graphics\UIOverlay.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Marte/Documents/GitHub/VAS-Unity/Simple VAS/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
