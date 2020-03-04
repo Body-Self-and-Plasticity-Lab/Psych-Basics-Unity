@@ -18,19 +18,30 @@ namespace UnityPsychBasics
         private TaskManager _taskManager;
         private LabelNames _labelNames;
 
-        private void Start() {
+        public static ScaleSettings instance;
+
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
 
             _taskManager = TaskManager.instance;
             _labelNames = LabelNames.instance;
+        }
 
+        private void Start() {
+
+
+
+        }
+
+        public void CreateToggles(){
             if (!_taskManager.useAnalogueScale)
                 for (int i = 0; i < likertItems.Count; i++)
                     CreateToggle(i);
 
             else
                 SetAnalogueScaleNames();
-
-            _taskManager.InitializeValuesListsAndObjects();
         }
 
         private void CreateToggle(int index) {

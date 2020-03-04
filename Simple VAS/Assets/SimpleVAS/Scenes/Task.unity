@@ -439,13 +439,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionUI: {fileID: 2124150100}
-  nextButton: {fileID: 2009352318}
+  _nextButton: {fileID: 2009352318}
   _scrollbar: {fileID: 1825505998}
   _toggleGroup: {fileID: 1870235923}
   _image: {fileID: 1475651655}
   shuffle: 1
   useImages: 1
-  useAnalogueScale: 0
+  useAnalogueScale: 1
   setValueOutside: 0
 --- !u!4 &1180434043
 Transform:
@@ -471,8 +471,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8134bd333f0762247a70180a64abdf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeLastCondition: Inter
-  afterLastCondition: Debriefing
+  sceneBeforeLastCondition: Inter
+  sceneAfterLastCondition: Debriefing
+  currentTask: 0
+  withinScene: 1
+  shuffle: 0000
+  useImage: 0100
+  analogueScale: 0100
+  useMouseClickSelector: 0000
 --- !u!114 &1180434045
 MonoBehaviour:
   m_ObjectHideFlags: 0

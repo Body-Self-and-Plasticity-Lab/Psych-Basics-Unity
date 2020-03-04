@@ -68,8 +68,8 @@
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\DebriefingText.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ImageRead.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LabelNames.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LoadAfterTask.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LoadScene.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LoadSceneAfterTask.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\MouseClickResponse.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ScaleSettings.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\TaskManager.cs" />
