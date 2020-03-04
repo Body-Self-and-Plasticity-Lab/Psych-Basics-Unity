@@ -27,18 +27,23 @@ namespace UnityPsychBasics
         public List<bool> useMouseClickSelector = new List<bool>();
 
         private TaskManager _taskManager;
+        private MouseClickResponse _mouseClickResponse;
 
         private void Awake()
         {
             if (instance == null)
                 instance = this;
 
-            _taskManager = TaskManager.instance;
+            _taskManager = TaskManager.instance;   
         }
 
         private void Start() {
+            _mouseClickResponse = MouseClickResponse.instance;
+
             if (withinScene)
                 SetWithinConditions(false);
+            else
+                _taskManager.InitializeValuesListsAndObjects();
         }
 
 
@@ -58,7 +63,10 @@ namespace UnityPsychBasics
 
         private void SetWithinConditions(bool isLast) {
 
+
             if (currentTask < useImage.Count) {
+
+                _mouseClickResponse.ActivateSelector(useMouseClickSelector[currentTask]);
                 _taskManager.useImages = useImage[currentTask];
                 _taskManager.useAnalogueScale = analogueScale[currentTask];
                 _taskManager.shuffle = shuffle[currentTask];

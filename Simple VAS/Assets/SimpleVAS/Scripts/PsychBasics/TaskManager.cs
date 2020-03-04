@@ -8,7 +8,7 @@ namespace UnityPsychBasics {
 
     public class TaskManager : MonoBehaviour {
 
-        public Text questionUI;
+        public Text textUI;
         public Button _nextButton;
         public Scrollbar _scrollbar;
         public ToggleGroup _toggleGroup;
@@ -60,28 +60,21 @@ namespace UnityPsychBasics {
             _scaleSettings = ScaleSettings.instance;
            _scaleSettings.CreateToggles();
 
-            if(setValueOutside) {
-                _toggleGroup.gameObject.SetActive(false);
-                _scrollbar.gameObject.SetActive(false);
-                _nextButton.gameObject.SetActive(false);
-            }
-
+            if(setValueOutside) 
+                ShowGameObjects(new GameObject[]{  });
+                      
             else {
-                if (useAnalogueScale) {
-                    _toggleGroup.gameObject.SetActive(false);
-                    _scrollbar.gameObject.SetActive(true);
-                }
-
-                else {
-                    _scrollbar.gameObject.SetActive(false);
-                    _toggleGroup.gameObject.SetActive(true);
-                }
+                if (useAnalogueScale && useImages) 
+                    ShowGameObjects(new GameObject[] {_scrollbar.gameObject, _image.gameObject, _nextButton.gameObject});
+                else if (!useAnalogueScale && useImages)
+                    ShowGameObjects(new GameObject[] { _toggleGroup.gameObject, _image.gameObject, _nextButton.gameObject });
+                else if (useAnalogueScale && !useImages)
+                    ShowGameObjects(new GameObject[] { _scrollbar.gameObject, textUI.gameObject, _nextButton.gameObject });
+                else if (!useAnalogueScale && !useImages)
+                    ShowGameObjects(new GameObject[] { _toggleGroup.gameObject, textUI.gameObject, _nextButton.gameObject });
             }
 
             if (useImages) {
-
-                _image.gameObject.SetActive(true);
-                questionUI.gameObject.SetActive(false);
 
                 imageProjectionSize = new Vector2(_image.rectTransform.rect.width, _image.rectTransform.rect.height);             
                 
@@ -98,19 +91,32 @@ namespace UnityPsychBasics {
             else {
                 _csvReader.SetFileToLoad();
 
-                _nextButton.interactable = false;
-                _image.gameObject.SetActive(false);
-                questionUI.gameObject.SetActive(true);
-
                 for (int i = 0; i < _csvReader.questionnaireInput.Count; i++)
                     questionList.Add(_csvReader.questionnaireInput[i]);
 
                 if (shuffle)
                     CreateShuffleList();
 
-                questionUI.text = questionList[currentItem];
-            }          
-           
+                textUI.text = questionList[currentItem];
+            }
+
+
+        }
+
+        private void ShowGameObjects(GameObject[] objectToShow)
+        {
+            GameObject[] _gameObjectsToShow = {_toggleGroup.gameObject, _scrollbar.gameObject, _nextButton.gameObject, _image.gameObject, textUI.gameObject};
+
+            foreach (GameObject _object in _gameObjectsToShow) {
+                _object.SetActive(false);
+                
+                for (int i = 0; i < objectToShow.Length; i++) {
+                    if (objectToShow[i] == _object)
+                        _object.SetActive(true);
+                }
+
+            }
+
         }
 
         private void CreateShuffleList(){
@@ -200,7 +206,7 @@ namespace UnityPsychBasics {
 
                 else {
                     if (currentItem < questionList.Count)
-                        questionUI.text = questionList[currentItem];
+                        textUI.text = questionList[currentItem];
 
                     else if (currentItem == questionList.Count)
                         QuestionsExhausted();
@@ -215,7 +221,7 @@ namespace UnityPsychBasics {
                         SetImage();
 
                     else
-                        questionUI.text = questionList[currentItem];
+                        textUI.text = questionList[currentItem];
 
                     _timer.stopwatch.Start();
                 }
@@ -228,8 +234,7 @@ namespace UnityPsychBasics {
         private void SetImage(){
             
             _image.sprite = imageList[currentItem];
-            float ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
-            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);            //_image.GetComponent<RectTransform>().rect.height*ratio
+            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(_image.sprite.rect.width, (float)_image.sprite.rect.height);
         }
 
 
