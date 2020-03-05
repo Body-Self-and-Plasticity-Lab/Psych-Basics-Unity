@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Simple VAS/Assets/SimpleVAS/Scripts/PsychBasics/WaitForFixedTime.cs.meta
-guid: c7e73ed3711cd6847b1e8ebc5c900d80
-=======
 guid: 256f2fa71df15ed4388fd0d05af353d2
->>>>>>> develop:Simple VAS/Assets/SimpleVAS/Scripts/CustomInspector/TaskSettingsEditor.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -492,11 +492,11 @@ MonoBehaviour:
   - tres
   - cuatro
   - cinco
-  numberOfConditions: 4
-  shuffle: 01000001
-  useImage: 01000000
-  analogueScale: 01000000
-  useMouseClickSelector: 00000000
+  numberOfConditions: 3
+  shuffle: 010101
+  useImage: 000100
+  analogueScale: 010000
+  useMouseClickSelector: 000100
 --- !u!114 &1180434045
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -84,8 +84,8 @@ namespace UnityPsychBasics {
 
                 imageProjectionSize = new Vector2(_image.rectTransform.rect.width, _image.rectTransform.rect.height);             
                 
-                for (int i = 0; i < _imageReader.imageSprites.Count; i++)
-                    imageList.Add(_imageReader.imageSprites[i]);
+                for (int i = 0; i < _imageReader.imageSprites1.Count; i++)
+                    imageList.Add(_imageReader.imageSprites1[i]);
 
                 for (int i = 0; i < _imageReader.imageSprites2.Count; i++)
                     imageList2.Add(_imageReader.imageSprites2[i]);
@@ -271,14 +271,14 @@ namespace UnityPsychBasics {
             _image.sprite = imageList[currentItem];
 
             float ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
-            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);
+            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(_image.sprite.rect.width, _image.sprite.rect.height);
 
             yield return new WaitForFixedTime(showImageForTime);
 
             _image.sprite = imageList2[currentItem];
 
             ratio = (float)_image.sprite.rect.height / (float)_image.sprite.rect.width;
-            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(imageProjectionSize.x, imageProjectionSize.y*ratio);
+            _image.GetComponent<RectTransform>().sizeDelta = new Vector2(_image.sprite.rect.width, _image.sprite.rect.height);
 
             yield return new WaitForFixedTime(showImageForTime);
 
