@@ -14,6 +14,7 @@ namespace UnityPsychBasics {
         public ToggleGroup _toggleGroup;
         public Image _image;
 
+        [HideInInspector]
         public bool shuffle, useImages, useAnalogueScale;
 
         [HideInInspector]
@@ -247,21 +248,21 @@ namespace UnityPsychBasics {
             indexList.Clear();
 
             _nextButton.interactable = false;
-
-            if (LoadAfterTask.instance == null) {
+            
+            if (TaskSettings.instance == null) {
                 UnityEngine.Debug.Log("You must attach the LoadSceneAfterTask object somewhere in the scene and add Scene names to it");//else the call is ambiguous for the diagnostics library
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
             else {
                 if (_csvWriter.condition < ConditionDictionary.selectedOrder.Length)
-                    LoadAfterTask.instance.LoadBeforeLast();
+                    TaskSettings.instance.LoadBeforeLast();
 
                 else if (_csvWriter.condition == ConditionDictionary.selectedOrder.Length)
-                    LoadAfterTask.instance.LoadAfterLast();
+                    TaskSettings.instance.LoadAfterLast();
             }
         }
 
     }
 
-}
+    }

@@ -416,8 +416,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1180434043}
   - component: {fileID: 1180434042}
-  - component: {fileID: 1180434047}
   - component: {fileID: 1180434044}
+  - component: {fileID: 1180434047}
   - component: {fileID: 1180434045}
   - component: {fileID: 1180434046}
   m_Layer: 0
@@ -475,9 +475,14 @@ MonoBehaviour:
   sceneAfterLastCondition: Debriefing
   currentTask: 0
   withinScene: 1
-  shuffle: 00000101
+  shuffleBool: 0
+  useImageBool: 0
+  useAnalogueScaleBool: 0
+  useMouseBool: 0
+  numberOfConditions: 4
+  shuffle: 00000000
   useImage: 00010001
-  analogueScale: 01000100
+  analogueScale: 00000100
   useMouseClickSelector: 00000001
 --- !u!114 &1180434045
 MonoBehaviour:
