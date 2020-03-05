@@ -8,12 +8,13 @@ namespace UnityPsychBasics {
 
     public class TaskManager : MonoBehaviour {
 
-        public Text questionUI;
-        public Button nextButton;
+        public Text textUI;
+        public Button _nextButton;
         public Scrollbar _scrollbar;
         public ToggleGroup _toggleGroup;
         public Image _image;
 
+        [HideInInspector]
         public bool shuffle, useImages, useAnalogueScale;
         public float showImageForTime;
 
@@ -28,6 +29,7 @@ namespace UnityPsychBasics {
         private CsvRead _csvReader;
         private ImageRead _imageReader;
         private Timer _timer;
+        private ScaleManager _scaleManager;
 
         private List<string> questionList = new List<string>();
 
@@ -46,17 +48,14 @@ namespace UnityPsychBasics {
                 instance = this;
 
             _csvWriter = CsvWrite.instance;
-
-            if (useImages)
-                _imageReader = ImageRead.instance;
-            else
-                _csvReader = CsvRead.instance;
+            _imageReader = ImageRead.instance;
+            _csvReader = CsvRead.instance;
+           
         }
 
         void Start() {
 
-            //InitializeValuesListsAndObjects();
-            nextButton.interactable = false;
+            _nextButton.interactable = false;
 
             _timer = Timer.instance;
 
@@ -64,28 +63,29 @@ namespace UnityPsychBasics {
 
         public void InitializeValuesListsAndObjects() {
 
-            if(!useImages)
-                _csvReader.SetFileToLoad();
+            _scaleManager = ScaleManager.instance;
+            _scaleManager.CreateToggles();
 
-            if(setValueOutside) {
-                _toggleGroup.gameObject.SetActive(false);
-                _scrollbar.gameObject.SetActive(false);
-            }
-
+            if(setValueOutside) 
+                ShowGameObjects(new GameObject[]{  });
+                      
             else {
-                if (useAnalogueScale)
-                    _toggleGroup.gameObject.SetActive(false);
-                else
-                    _scrollbar.gameObject.SetActive(false);
+                if (useAnalogueScale && useImages) 
+                    ShowGameObjects(new GameObject[] {_scrollbar.gameObject, _image.gameObject, _nextButton.gameObject});
+                else if (!useAnalogueScale && useImages)
+                    ShowGameObjects(new GameObject[] { _toggleGroup.gameObject, _image.gameObject, _nextButton.gameObject });
+                else if (useAnalogueScale && !useImages)
+                    ShowGameObjects(new GameObject[] { _scrollbar.gameObject, textUI.gameObject, _nextButton.gameObject });
+                else if (!useAnalogueScale && !useImages)
+                    ShowGameObjects(new GameObject[] { _toggleGroup.gameObject, textUI.gameObject, _nextButton.gameObject });
             }
 
             if (useImages) {
-                imageProjectionSize = new Vector2(_image.rectTransform.rect.width, _image.rectTransform.rect.height);
 
-                questionUI.gameObject.SetActive(false);
-
-                for (int i = 0; i < _imageReader.imageSprites1.Count; i++)
-                    imageList.Add(_imageReader.imageSprites1[i]);
+                imageProjectionSize = new Vector2(_image.rectTransform.rect.width, _image.rectTransform.rect.height);             
+                
+                for (int i = 0; i < _imageReader.imageSprites.Count; i++)
+                    imageList.Add(_imageReader.imageSprites[i]);
 
                 for (int i = 0; i < _imageReader.imageSprites2.Count; i++)
                     imageList2.Add(_imageReader.imageSprites2[i]);
@@ -98,8 +98,7 @@ namespace UnityPsychBasics {
             }
 
             else {
-
-                _image.gameObject.SetActive(false);
+                _csvReader.SetFileToLoad();
 
                 for (int i = 0; i < _csvReader.questionnaireInput.Count; i++)
                     questionList.Add(_csvReader.questionnaireInput[i]);
@@ -107,10 +106,26 @@ namespace UnityPsychBasics {
                 if (shuffle)
                     CreateShuffleList();
 
-                questionUI.text = questionList[currentItem];
-                _timer.stopwatch.Start();
-            }          
-           
+                textUI.text = questionList[currentItem];
+            }
+
+
+        }
+
+        private void ShowGameObjects(GameObject[] objectToShow)
+        {
+            GameObject[] _gameObjectsToShow = {_toggleGroup.gameObject, _scrollbar.gameObject, _nextButton.gameObject, _image.gameObject, textUI.gameObject};
+
+            foreach (GameObject _object in _gameObjectsToShow) {
+                _object.SetActive(false);
+                
+                for (int i = 0; i < objectToShow.Length; i++) {
+                    if (objectToShow[i] == _object)
+                        _object.SetActive(true);
+                }
+
+            }
+
         }
 
         private void CreateShuffleList(){
@@ -136,14 +151,14 @@ namespace UnityPsychBasics {
 
 
         public void OnResponseSelection() {
-            nextButton.interactable = true;
+            _nextButton.interactable = true;
         }
 
         public void OnNextButton() {
 
             CsvWrite.instance.responseTime = _timer.ElapsedTimeAndRestart();
 
-            nextButton.interactable = false;
+            _nextButton.interactable = false;
 
             _csvWriter.item = currentItem;
 
@@ -170,7 +185,7 @@ namespace UnityPsychBasics {
                             currentValue = i;
 
                     _toggleGroup.SetAllTogglesOff();
-                    nextButton.interactable = false;
+                    _nextButton.interactable = false;
             }
 
                 else
@@ -199,7 +214,7 @@ namespace UnityPsychBasics {
 
                 else {
                     if (currentItem < questionList.Count)
-                        questionUI.text = questionList[currentItem];
+                        textUI.text = questionList[currentItem];
 
                     else if (currentItem == questionList.Count)
                         QuestionsExhausted();
@@ -211,11 +226,9 @@ namespace UnityPsychBasics {
                     currentItem = ShuffleValue();
 
                     if (useImages)
-
                         StartCoroutine(ShowImageForTime());
                     else {
-
-                        questionUI.text = questionList[currentItem];
+                        textUI.text = questionList[currentItem];
                         _timer.stopwatch.Start();
                     }                  
                 }
@@ -226,26 +239,27 @@ namespace UnityPsychBasics {
         }
 
 
-
         private void QuestionsExhausted() {
 
             _csvWriter.condition++;
+            currentItem = 0;
+            questionList.Clear();
+            imageList.Clear();
+            indexList.Clear();
 
-            string sceneToLoad = null;
+            _nextButton.interactable = false;
             
-            if(LoadSceneAfterTask.instance == null) {
+            if (TaskSettings.instance == null) {
                 UnityEngine.Debug.Log("You must attach the LoadSceneAfterTask object somewhere in the scene and add Scene names to it");//else the call is ambiguous for the diagnostics library
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
             else {
                 if (_csvWriter.condition < ConditionDictionary.selectedOrder.Length)
-                    sceneToLoad = LoadSceneAfterTask.instance.beforeLastCondition;
+                    TaskSettings.instance.LoadBeforeLast();
 
                 else if (_csvWriter.condition == ConditionDictionary.selectedOrder.Length)
-                    sceneToLoad = LoadSceneAfterTask.instance.afterLastCondition;
-
-                SceneManager.LoadScene(sceneToLoad);
+                    TaskSettings.instance.LoadAfterLast();
             }
         }
 
@@ -276,4 +290,4 @@ namespace UnityPsychBasics {
         }
     }
 
-}
+    }

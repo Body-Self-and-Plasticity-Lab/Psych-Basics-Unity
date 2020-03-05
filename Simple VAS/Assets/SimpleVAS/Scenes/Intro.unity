@@ -868,6 +868,7 @@ MonoBehaviour:
   - visuotactile
   - visuomotor
   - passive
+  - active
   conditionDropdown: {fileID: 1451795897}
 --- !u!114 &335548859
 MonoBehaviour:

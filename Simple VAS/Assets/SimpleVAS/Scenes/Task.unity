@@ -417,9 +417,9 @@ GameObject:
   - component: {fileID: 1180434043}
   - component: {fileID: 1180434042}
   - component: {fileID: 1180434047}
-  - component: {fileID: 1180434044}
   - component: {fileID: 1180434045}
   - component: {fileID: 1180434046}
+  - component: {fileID: 1180434044}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -438,13 +438,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e881cd00b3eb1468382d0c7048881294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionUI: {fileID: 2124150100}
-  nextButton: {fileID: 2009352318}
+  textUI: {fileID: 2124150100}
+  _nextButton: {fileID: 2009352318}
   _scrollbar: {fileID: 1825505998}
   _toggleGroup: {fileID: 1870235923}
   _image: {fileID: 1475651655}
   shuffle: 0
-  useImages: 1
+  useImages: 0
   useAnalogueScale: 0
   showImageForTime: 5
   setValueOutside: 0
@@ -475,8 +475,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8134bd333f0762247a70180a64abdf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeLastCondition: Inter
-  afterLastCondition: Debriefing
+  sceneBeforeLastCondition: Inter
+  sceneAfterLastCondition: Debriefing
+  currentTask: 0
+  withinScene: 1
+  shuffleBool: 0
+  useImageBool: 0
+  useAnalogueScaleBool: 1
+  useMouseBool: 0
+  minVASLabel: strongly disagree
+  midVASLabel: neither agree or disagree
+  maxVASLabel: strongly agree
+  likertItems:
+  - uno
+  - dos
+  - tres
+  - cuatro
+  - cinco
+  numberOfConditions: 4
+  shuffle: 01000001
+  useImage: 01000000
+  analogueScale: 01000000
+  useMouseClickSelector: 00000000
 --- !u!114 &1180434045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,9 +539,7 @@ MonoBehaviour:
   minVASLabel: small
   midVASLabel: medium
   maxVASLabel: high
-  likertItems:
-  - yes
-  - no
+  likertItems: []
 --- !u!1 &1284041086
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +807,7 @@ RectTransform:
   m_GameObject: {fileID: 1475651654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1382961454}
   m_RootOrder: 4

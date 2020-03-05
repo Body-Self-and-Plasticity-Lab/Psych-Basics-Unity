@@ -4,24 +4,38 @@ using UnityEngine.UI;
 
 namespace UnityPsychBasics
 {
-    public class ScaleSettings : MonoBehaviour {
+    public class ScaleManager : MonoBehaviour {
 
         public GameObject togglePrefab;
         public ToggleGroup toggleGroup;
 
         public GameObject scrollbar;
 
+        [HideInInspector]
         public string minVASLabel, midVASLabel, maxVASLabel;
 
+        [HideInInspector]
         public List<string> likertItems = new List<string>();
 
         private TaskManager _taskManager;
         private LabelNames _labelNames;
 
-        private void Start() {
+        public static ScaleManager instance;
+
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
 
             _taskManager = TaskManager.instance;
             _labelNames = LabelNames.instance;
+        }
+
+        public void CreateToggles(){
+
+            foreach(Transform child in toggleGroup.GetComponent<Transform>()){
+                GameObject.Destroy(child.gameObject);
+            }
 
             if (!_taskManager.useAnalogueScale)
                 for (int i = 0; i < likertItems.Count; i++)
@@ -29,8 +43,6 @@ namespace UnityPsychBasics
 
             else
                 SetAnalogueScaleNames();
-
-            _taskManager.InitializeValuesListsAndObjects();
         }
 
         private void CreateToggle(int index) {
