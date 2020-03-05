@@ -4,21 +4,23 @@ using UnityEngine.UI;
 
 namespace UnityPsychBasics
 {
-    public class ScaleSettings : MonoBehaviour {
+    public class ScaleManager : MonoBehaviour {
 
         public GameObject togglePrefab;
         public ToggleGroup toggleGroup;
 
         public GameObject scrollbar;
 
+        [HideInInspector]
         public string minVASLabel, midVASLabel, maxVASLabel;
 
+        [HideInInspector]
         public List<string> likertItems = new List<string>();
 
         private TaskManager _taskManager;
         private LabelNames _labelNames;
 
-        public static ScaleSettings instance;
+        public static ScaleManager instance;
 
         private void Awake()
         {
@@ -27,10 +29,6 @@ namespace UnityPsychBasics
 
             _taskManager = TaskManager.instance;
             _labelNames = LabelNames.instance;
-        }
-
-        private void Start() {
-
         }
 
         public void CreateToggles(){

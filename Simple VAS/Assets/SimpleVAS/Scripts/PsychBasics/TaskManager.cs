@@ -26,7 +26,7 @@ namespace UnityPsychBasics {
         private CsvRead _csvReader;
         private ImageRead _imageReader;
         private Timer _timer;
-        private ScaleSettings _scaleSettings;
+        private ScaleManager _scaleManager;
 
         private List<string> questionList = new List<string>();
         private List<Sprite> imageList = new List<Sprite>();
@@ -58,8 +58,8 @@ namespace UnityPsychBasics {
 
         public void InitializeValuesListsAndObjects() {
 
-            _scaleSettings = ScaleSettings.instance;
-           _scaleSettings.CreateToggles();
+            _scaleManager = ScaleManager.instance;
+            _scaleManager.CreateToggles();
 
             if(setValueOutside) 
                 ShowGameObjects(new GameObject[]{  });

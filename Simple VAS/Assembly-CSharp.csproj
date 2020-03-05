@@ -71,7 +71,7 @@
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LabelNames.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\LoadScene.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\MouseClickResponse.cs" />
-    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ScaleSettings.cs" />
+    <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\ScaleManager.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\TaskManager.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\TaskSettings.cs" />
     <Compile Include="Assets\SimpleVAS\Scripts\PsychBasics\Timer.cs" />

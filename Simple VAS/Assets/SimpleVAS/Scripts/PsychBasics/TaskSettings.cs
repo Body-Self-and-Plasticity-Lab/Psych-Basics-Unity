@@ -13,9 +13,11 @@ namespace UnityPsychBasics
 
         public int currentTask;
 
-        public bool withinScene;
+        [SerializeField]
+        public bool withinScene, shuffleBool, useImageBool, useAnalogueScaleBool, useMouseBool;
 
-        public bool shuffleBool, useImageBool, useAnalogueScaleBool, useMouseBool;
+        public string minVASLabel, midVASLabel, maxVASLabel;
+        public List<string> likertItems = new List<string>();
 
         public int numberOfConditions;
 
@@ -25,24 +27,38 @@ namespace UnityPsychBasics
         public List<bool> useMouseClickSelector = new List<bool>();
 
         private TaskManager _taskManager;
+        private ScaleManager _scaleSettings;
         private MouseClickResponse _mouseClickResponse;
         
         private void Awake() {
             if (instance == null)
                 instance = this;
-
-            _taskManager = TaskManager.instance;   
         }
 
         private void Start() {
+            _taskManager = TaskManager.instance;
+            _scaleSettings = ScaleManager.instance;
+
             _mouseClickResponse = MouseClickResponse.instance;
 
+           
             if (withinScene)
                 SetWithinScene(false);
             else
                 SetForSeparateScenes();
+
+            SetScaleSettings();
         }
 
+        private void SetScaleSettings(){
+            _scaleSettings.minVASLabel = minVASLabel;
+            _scaleSettings.midVASLabel = midVASLabel;
+            _scaleSettings.maxVASLabel = maxVASLabel;
+
+            for (int i = 0; i < likertItems.Count; i++) {
+                _scaleSettings.likertItems.Add(likertItems[i]);
+            }
+        }
 
         public void LoadBeforeLast() {
             if (!withinScene)

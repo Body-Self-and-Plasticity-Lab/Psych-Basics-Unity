@@ -416,10 +416,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1180434043}
   - component: {fileID: 1180434042}
-  - component: {fileID: 1180434044}
   - component: {fileID: 1180434047}
   - component: {fileID: 1180434045}
   - component: {fileID: 1180434046}
+  - component: {fileID: 1180434044}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -477,13 +477,22 @@ MonoBehaviour:
   withinScene: 1
   shuffleBool: 0
   useImageBool: 0
-  useAnalogueScaleBool: 0
+  useAnalogueScaleBool: 1
   useMouseBool: 0
+  minVASLabel: strongly disagree
+  midVASLabel: neither agree or disagree
+  maxVASLabel: strongly agree
+  likertItems:
+  - uno
+  - dos
+  - tres
+  - cuatro
+  - cinco
   numberOfConditions: 4
-  shuffle: 00000000
-  useImage: 00010001
-  analogueScale: 00000100
-  useMouseClickSelector: 00000001
+  shuffle: 01000001
+  useImage: 01000000
+  analogueScale: 01000000
+  useMouseClickSelector: 00000000
 --- !u!114 &1180434045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,12 +535,7 @@ MonoBehaviour:
   minVASLabel: small
   midVASLabel: medium
   maxVASLabel: high
-  likertItems:
-  - strongly disagree
-  - mildly disagree
-  - neither
-  - mildly agree
-  - mildly disagree
+  likertItems: []
 --- !u!1 &1284041086
 GameObject:
   m_ObjectHideFlags: 0
