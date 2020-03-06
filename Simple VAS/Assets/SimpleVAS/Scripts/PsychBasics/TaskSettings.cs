@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UnityPsychBasics
 {
@@ -62,14 +61,14 @@ namespace UnityPsychBasics
 
         public void LoadBeforeLast() {
             if (!withinScene)
-                SceneManager.LoadScene(sceneBeforeLastCondition);
+                _taskManager.LoadScene(sceneBeforeLastCondition);
             else 
                 SetWithinScene(false);                         
         }
 
         public void LoadAfterLast() {
             if (!withinScene)
-                SceneManager.LoadScene(sceneAfterLastCondition);
+                _taskManager.LoadScene(sceneAfterLastCondition);
             else
                 SetWithinScene(true);
         }
@@ -100,9 +99,9 @@ namespace UnityPsychBasics
 
             else {
                 if(!isLast)
-                    SceneManager.LoadScene(sceneBeforeLastCondition);
+                    _taskManager.LoadScene(sceneBeforeLastCondition);
                 else
-                    SceneManager.LoadScene(sceneAfterLastCondition);
+                    _taskManager.LoadScene(sceneAfterLastCondition);
             }
 
         }

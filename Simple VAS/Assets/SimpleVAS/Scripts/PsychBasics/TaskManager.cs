@@ -288,6 +288,11 @@ namespace UnityPsychBasics {
             allowInput = true;
 
         }
+
+        public void LoadScene(string scene) {
+            SceneManager.LoadScene(scene);
+        }
+
     }
 
     }
