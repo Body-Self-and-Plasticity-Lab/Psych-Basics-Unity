@@ -263,6 +263,10 @@ namespace UnityPsychBasics {
             }
         }
 
+        public void LoadScene(string scene) {
+            SceneManager.LoadScene(scene);
+        }
+
     }
 
     }

@@ -474,7 +474,7 @@ MonoBehaviour:
   sceneBeforeLastCondition: Inter
   sceneAfterLastCondition: Debriefing
   currentTask: 0
-  withinScene: 1
+  withinScene: 0
   shuffleBool: 0
   useImageBool: 0
   useAnalogueScaleBool: 1
