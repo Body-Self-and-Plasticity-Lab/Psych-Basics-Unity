@@ -15,6 +15,8 @@ namespace UnityPsychBasics
         [SerializeField]
         public bool withinScene, shuffleBool, useImageBool, useAnalogueScaleBool, useMouseBool;
 
+        public bool start;
+
         public string minVASLabel, midVASLabel, maxVASLabel;
         public List<string> likertItems = new List<string>();
 
@@ -40,7 +42,8 @@ namespace UnityPsychBasics
 
             _mouseClickResponse = MouseClickResponse.instance;
 
-           
+            start = false;
+       
             if (withinScene)
                 SetWithinScene(false);
             else
@@ -83,27 +86,47 @@ namespace UnityPsychBasics
         }
 
         private void SetWithinScene(bool isLast) {
+            StartCoroutine(WaitBeforeShowing(isLast));       
 
+        }
 
-            if (currentTask < useImage.Count) {
+        private void Update()
+        {
+            if(Input.GetKeyDown("space"))
+                start = true;
+        }
+
+        private IEnumerator WaitBeforeShowing(bool isLast){
+            _taskManager.instructions.SetActive(true);
+            
+            while (!start){
+                yield return null;
+            }
+
+            start = false;
+            _taskManager.instructions.SetActive(false);
+            
+
+            if (currentTask < useImage.Count)
+            {
 
                 _mouseClickResponse.ActivateSelector(useMouseClickSelector[currentTask]);
                 _taskManager.useImages = useImage[currentTask];
                 _taskManager.useAnalogueScale = analogueScale[currentTask];
                 _taskManager.shuffle = shuffle[currentTask];
-                
+
                 _taskManager.InitializeValuesListsAndObjects();
 
                 currentTask++;
             }
 
-            else {
-                if(!isLast)
+            else
+            {
+                if (!isLast)
                     _taskManager.LoadScene(sceneBeforeLastCondition);
                 else
                     _taskManager.LoadScene(sceneAfterLastCondition);
             }
-
         }
 
                 

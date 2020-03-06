@@ -13,6 +13,7 @@ namespace UnityPsychBasics {
         public Scrollbar _scrollbar;
         public ToggleGroup _toggleGroup;
         public Image _image;
+        public GameObject instructions;
 
         [HideInInspector]
         public bool shuffle, useImages, useAnalogueScale;
@@ -41,6 +42,7 @@ namespace UnityPsychBasics {
         private int currentItem;
 
         private Vector2 imageProjectionSize;
+
     
         private void Awake() {
 

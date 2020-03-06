@@ -27,7 +27,6 @@ namespace UnityPsychBasics
 
             stopwatch.Reset();
 
-            UnityEngine.Debug.Log(elapsedTime);
             return elapsedTime;
         }
     }
