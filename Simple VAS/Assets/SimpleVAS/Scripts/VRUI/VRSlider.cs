@@ -81,12 +81,12 @@ namespace VRHeadInteractions {
 
 	    void OnScrolling () {
 
-		    float canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
-		    float scrollBarSize = GetComponent<RectTransform>().rect.width;//GetComponent<Scrollbar> ().handleRect.rect.width;
+		    float scrollBarSize = GetComponent<RectTransform>().rect.width;
             float elapsedTime = Time.realtimeSinceStartup - momentOnView;
-		    //float currentPosition = this.gameObject.transform.position.x;
 
-		    float mappedPosition =(reticlePosition.transform.position.x/(scrollBarSize*canvasScale))+0.5f; //where 250 is the size in X of the scrollbar, 0.25 the scaling of the canvas and 0.5 to go between 0 and 1 instead of -0.5 to 0.5
+            Vector3 relativeToCanvas = GetComponentInParent<Canvas>().gameObject.transform.InverseTransformPoint(reticlePosition.transform.position);
+
+		    float mappedPosition =(relativeToCanvas.x/(scrollBarSize))+0.5f;          
 
 		    if (elapsedTime >= gazeTimeForSelection) 
 		    {
