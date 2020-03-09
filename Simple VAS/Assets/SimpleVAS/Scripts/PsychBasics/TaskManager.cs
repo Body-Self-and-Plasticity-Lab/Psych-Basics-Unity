@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
+using VRHeadInteractions;
 
 namespace UnityPsychBasics {
 
@@ -60,6 +62,9 @@ namespace UnityPsychBasics {
             _nextButton.interactable = false;
 
             _timer = Timer.instance;
+
+            if (!XRDevice.isPresent)
+                VRCameraUI.instance.Hide();
 
         }
 
@@ -295,6 +300,15 @@ namespace UnityPsychBasics {
             SceneManager.LoadScene(scene);
         }
 
+        public void ShowReticle(bool show) {
+            if(XRDevice.isPresent){
+                if (show)
+                    VRCameraUI.instance.Show();
+                else
+                    VRCameraUI.instance.Hide();
+            }
+        }
+             
     }
 
     }

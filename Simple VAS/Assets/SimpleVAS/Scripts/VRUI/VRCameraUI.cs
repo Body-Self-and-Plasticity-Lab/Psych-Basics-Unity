@@ -8,10 +8,14 @@ namespace VRHeadInteractions
     public class VRCameraUI : MonoBehaviour
     {
         [SerializeField] private Canvas m_Canvas;       // Reference to the canvas containing the UI.
-
+        public static VRCameraUI instance;
 
         private void Awake()
         {
+
+            if (instance == null)
+                instance = this;
+
             // Make sure the canvas is on.
             m_Canvas.enabled = true;
 
@@ -20,6 +24,13 @@ namespace VRHeadInteractions
 
             // Force the canvas to redraw so that it is correct before the first render.
             Canvas.ForceUpdateCanvases();
+        }
+
+        public void Hide(){
+            m_Canvas.gameObject.SetActive(false);
+        }
+        public void Show(){
+            m_Canvas.gameObject.SetActive(true);
         }
     }
 }

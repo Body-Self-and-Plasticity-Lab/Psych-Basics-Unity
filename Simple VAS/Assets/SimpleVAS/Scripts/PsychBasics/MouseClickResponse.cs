@@ -7,10 +7,9 @@ namespace UnityPsychBasics {
     public class MouseClickResponse : MonoBehaviour {
 
         private TaskManager _taskManager;
-        public bool useMouseClickSelector;
 
         [HideInInspector]
-        public bool orderLeft1Right2;
+        public bool useMouseClickSelector, orderLeft1Right2;
 
         private float[] mouseResponse;// = new int[] {0, 1};
 

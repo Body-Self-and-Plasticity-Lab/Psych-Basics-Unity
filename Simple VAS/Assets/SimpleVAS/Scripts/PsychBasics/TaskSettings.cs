@@ -98,6 +98,7 @@ namespace UnityPsychBasics
 
         private IEnumerator WaitBeforeShowing(bool isLast){
             _taskManager.instructions.SetActive(true);
+            _taskManager.ShowReticle(false);          
             
             while (!start){
                 yield return null;
@@ -105,7 +106,8 @@ namespace UnityPsychBasics
 
             start = false;
             _taskManager.instructions.SetActive(false);
-            
+            _taskManager.ShowReticle(true);
+
 
             if (currentTask < useImage.Count)
             {
