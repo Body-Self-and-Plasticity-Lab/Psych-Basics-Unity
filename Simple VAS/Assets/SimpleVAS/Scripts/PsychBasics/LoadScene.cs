@@ -8,8 +8,11 @@ namespace UnityPsychBasics
 	
     public class LoadScene : MonoBehaviour {
 
-	    public string sceneToLoad;
-	    public bool changeOnKey, changeAtTime;
+        [SerializeField]
+        public string sceneToLoad;
+        [SerializeField]
+        public bool changeOnKey, changeAtTime;
+        [SerializeField]
         public float sceneDuration;
 	
 	    // Update is called once per frame
