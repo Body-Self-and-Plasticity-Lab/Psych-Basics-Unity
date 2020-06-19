@@ -6,32 +6,36 @@ using UnityEngine.SceneManagement;
 namespace UnityPsychBasics
 {
 	
-public class LoadScene : MonoBehaviour {
+    public class LoadScene : MonoBehaviour {
 
-	public string sceneToLoad;
-	public bool changeOnKey;
-
-	// Use this for initialization
-	void Start () {
-
-	}
+	    public string sceneToLoad;
+	    public bool changeOnKey, changeAtTime;
+        public float sceneDuration;
 	
-	// Update is called once per frame
-	void Update () {
-		
-		if (changeOnKey)
-			if (Input.GetKeyDown ("space"))
-				OnNextButton ();
-	}
+	    // Update is called once per frame
+	    void Update () {
+
+            if (changeAtTime)
+                StartCoroutine(ChangeAtTime(sceneDuration));
+
+		    if (changeOnKey)
+			    if (Input.GetKeyDown ("space"))
+				    Load();
+	    }
 
 
-	public void OnNextButton () {
+	    public void Load() {
 
-		if (sceneToLoad != "")
-			SceneManager.LoadScene (sceneToLoad);
-		else
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
-	} 
-}
+		    if (sceneToLoad != "")
+			    SceneManager.LoadScene (sceneToLoad);
+		    else
+			    SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+	    } 
+
+        private IEnumerator ChangeAtTime(float _time){
+            yield return new WaitForFixedTime(_time);
+            Load();
+        }
+    }
 
 }
