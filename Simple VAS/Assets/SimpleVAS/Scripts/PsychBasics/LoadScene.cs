@@ -14,9 +14,16 @@ namespace UnityPsychBasics
         public bool changeOnKey, changeAtTime;
         [SerializeField]
         public float sceneDuration;
-	
-	    // Update is called once per frame
-	    void Update () {
+
+        public static LoadScene instance;
+
+        private void Awake()
+        {
+            if (instance == null) instance = this;
+        }
+
+        // Update is called once per frame
+        void Update () {
 
             if (changeAtTime)
                 StartCoroutine(ChangeAtTime(sceneDuration));

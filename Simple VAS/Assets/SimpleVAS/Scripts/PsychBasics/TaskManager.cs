@@ -16,7 +16,7 @@ namespace UnityPsychBasics {
         public ToggleGroup _toggleGroup;
         public Image _image;
 
-        [HideInInspector] public bool shuffle, useImages, useAnalogueScale;
+        [HideInInspector] public bool shuffle, useImages, useAnalogueScale, changeConditionWhenExhausted;
         [HideInInspector] public bool setValueOutside;
 
         public static TaskManager instance;
@@ -209,7 +209,7 @@ namespace UnityPsychBasics {
 
         private void QuestionsExhausted() 
         {
-            CsvWrite.instance.condition++;
+            if(changeConditionWhenExhausted) CsvWrite.instance.condition++;
             _currentItem = 0;
             _questionList.Clear();
             _imageList.Clear();

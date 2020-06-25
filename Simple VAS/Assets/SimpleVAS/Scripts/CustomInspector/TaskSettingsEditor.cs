@@ -19,6 +19,7 @@ namespace UnityPsychBasics {
             myScript.sceneBeforeLastCondition = EditorGUILayout.TextField("Scene Before Last", myScript.sceneBeforeLastCondition);
             myScript.sceneAfterLastCondition = EditorGUILayout.TextField("Scene After Last", myScript.sceneAfterLastCondition);
             EditorGUILayout.Space();
+            
 
             scaleLegendsFoldout = EditorGUILayout.Foldout(scaleLegendsFoldout,"Set legends for scales"); //GUILayout.Label("Set legends for scales");
             if(scaleLegendsFoldout){
@@ -67,6 +68,7 @@ namespace UnityPsychBasics {
             serializedObject.FindProperty("useImageBool").boolValue = EditorGUILayout.Toggle("Use Image", myScript.useImageBool);
             serializedObject.FindProperty("useAnalogueScaleBool").boolValue = EditorGUILayout.Toggle("Use VAS", myScript.useAnalogueScaleBool);
             serializedObject.FindProperty("useMouseBool").boolValue = EditorGUILayout.Toggle("Use Mouse Selector", myScript.useMouseBool);
+            serializedObject.FindProperty("changeConditionAfterTask").boolValue = EditorGUILayout.Toggle("Change Condition on Completion", myScript.changeConditionAfterTask);
             //myScript.shuffleBool = EditorGUILayout.Toggle("Shuffle", myScript.shuffleBool);
             //myScript.useImageBool = EditorGUILayout.Toggle("Use Image", myScript.useImageBool);
             //myScript.useAnalogueScaleBool = EditorGUILayout.Toggle("Use Image", myScript.useAnalogueScaleBool);

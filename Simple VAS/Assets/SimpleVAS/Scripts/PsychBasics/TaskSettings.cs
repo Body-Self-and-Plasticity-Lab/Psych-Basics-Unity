@@ -14,7 +14,7 @@ namespace UnityPsychBasics
         public int currentTask;
 
         [SerializeField]
-        public bool withinScene, shuffleBool, useImageBool, useAnalogueScaleBool, useMouseBool;
+        public bool withinScene, shuffleBool, useImageBool, useAnalogueScaleBool, useMouseBool, changeConditionAfterTask;
 
         public string minVASLabel, midVASLabel, maxVASLabel;
         public List<string> likertItems = new List<string>();
@@ -33,6 +33,8 @@ namespace UnityPsychBasics
 
         private void Start() 
         {
+            TaskManager.instance.changeConditionWhenExhausted = changeConditionAfterTask;
+
             if (withinScene) SetWithinScene(false);
             else { //set for separate scenes
                 MouseClickResponse.instance.ActivateSelector(shuffleBool);

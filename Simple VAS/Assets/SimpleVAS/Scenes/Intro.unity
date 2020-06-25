@@ -862,10 +862,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditions:
-  - visuotactile
-  - visuomotor
-  - passive
-  - active
+  - swap_sync
+  - swap_async
+  - self_sync
+  - self_async
   conditionDropdown: {fileID: 1451795897}
 --- !u!114 &335548859
 MonoBehaviour:
@@ -3556,7 +3556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1583745540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4462,7 +4462,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2111309769}
-        m_MethodName: OnNextButton
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4767,6 +4767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Instructions
   changeOnKey: 0
+  changeAtTime: 0
+  sceneDuration: 0
 --- !u!4 &2111309770
 Transform:
   m_ObjectHideFlags: 0

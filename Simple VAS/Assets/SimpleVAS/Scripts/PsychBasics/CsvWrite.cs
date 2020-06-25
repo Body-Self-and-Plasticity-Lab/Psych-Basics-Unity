@@ -14,7 +14,7 @@ namespace UnityPsychBasics {
         
         [HideInInspector] public List<string> varValues = new List<string>();
         [HideInInspector] public string responseTime;
-        [HideInInspector] public int item, condition;
+        [HideInInspector] public int item, condition;//todo, might be cleaner to store the condition index elsewhere, perhaps in ConditionDictionary.
         [HideInInspector] public float response;
         
 		//This allows the start function to be called only once.

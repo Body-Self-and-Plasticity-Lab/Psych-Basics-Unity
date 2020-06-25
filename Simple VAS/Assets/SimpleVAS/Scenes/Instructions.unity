@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Inter
   changeOnKey: 1
+  changeAtTime: 0
+  sceneDuration: 0
 --- !u!4 &272715640
 Transform:
   m_ObjectHideFlags: 0
@@ -278,7 +280,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 272715639}
-        m_MethodName: OnNextButton
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
