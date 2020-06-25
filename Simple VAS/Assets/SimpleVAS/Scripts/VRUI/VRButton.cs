@@ -2,9 +2,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using VRStandardAssets.Utils;
+//using VRStandardAssets.Utils;
 
-
+namespace VRStandardAssets.Utils
+{
 public class VRButton: MonoBehaviour {
 
 	public event Action<VRButton> OnButtonSelected;                   // This event is triggered when the selection of the button has finished.		
@@ -99,4 +100,5 @@ public class VRButton: MonoBehaviour {
 
 	}
 
+    }
 }

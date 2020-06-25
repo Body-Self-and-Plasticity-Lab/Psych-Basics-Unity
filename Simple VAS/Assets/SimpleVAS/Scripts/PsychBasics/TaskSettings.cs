@@ -13,7 +13,8 @@ namespace UnityPsychBasics
 
         public int currentTask;
 
-        public bool withinScene, shuffleBool, useImageBool, useAnalogueScaleBool;
+        [SerializeField]
+        public bool withinScene, shuffleBool, useImageBool, useAnalogueScaleBool, useMouseBool;
 
         public string minVASLabel, midVASLabel, maxVASLabel;
         public List<string> likertItems = new List<string>();
@@ -22,6 +23,8 @@ namespace UnityPsychBasics
         public List<bool> useImage = new List<bool>();
         public List<bool> analogueScale = new List<bool>();
         public List<bool> useMouseClickSelector = new List<bool>();
+
+        public int numberOfConditions;
 
         private void Awake() 
         {

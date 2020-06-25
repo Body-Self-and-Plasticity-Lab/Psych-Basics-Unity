@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace VRHeadInteractions
+namespace VRStandardAssets.Utils
 {
     // This class encapsulates all the input required for most VR games.
     // It has events that can be subscribed to by classes that need specific input.

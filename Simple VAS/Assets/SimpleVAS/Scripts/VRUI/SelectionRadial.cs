@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 
-namespace VRHeadInteractions
+namespace VRStandardAssets.Utils
 {
     // This class is used to control a radial bar that fills
     // up as the user holds down the Fire1 button.  When it has

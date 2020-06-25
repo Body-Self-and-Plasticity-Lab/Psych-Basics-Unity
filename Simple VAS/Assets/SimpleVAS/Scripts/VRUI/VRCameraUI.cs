@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace VRHeadInteractions
+namespace VRStandardAssets.Utils
 {
     // This class ensures that the UI (such as the reticle and selection bar)
     // are set up correctly.

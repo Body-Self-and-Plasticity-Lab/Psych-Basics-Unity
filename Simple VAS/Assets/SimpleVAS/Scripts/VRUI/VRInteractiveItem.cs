@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace VRHeadInteractions
+namespace VRStandardAssets.Utils
 {
     // This class should be added to any gameobject in the scene
     // that should react to input based on the user's gaze.

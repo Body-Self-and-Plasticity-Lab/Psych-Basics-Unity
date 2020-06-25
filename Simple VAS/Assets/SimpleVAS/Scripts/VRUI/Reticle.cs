@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-namespace VRHeadInteractions
+namespace VRStandardAssets.Utils
 {
     // The reticle is a small point at the centre of the screen.
     // It is used as a visual aid for aiming. The position of the

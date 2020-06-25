@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace VRHeadInteractions
+namespace VRStandardAssets.Utils
 {
     // In order to interact with objects in the scene
     // this class casts a ray into the scene and if it finds

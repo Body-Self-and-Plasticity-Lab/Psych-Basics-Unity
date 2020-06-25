@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using VRStandardAssets.Utils;
 
 
-public class VRSlider : MonoBehaviour {
+namespace VRStandardAssets.Utils
+{
+    public class VRSlider : MonoBehaviour {
 
 	private Scrollbar vScale;
 	private VRInteractiveItem m_InteractiveItem; 
@@ -94,4 +95,5 @@ public class VRSlider : MonoBehaviour {
 			momentOnView = Time.realtimeSinceStartup; //resets to actual time so that the elapsed time goes back to 0
 		}
 	}
+}
 }
