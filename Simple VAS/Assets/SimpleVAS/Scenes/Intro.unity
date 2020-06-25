@@ -836,7 +836,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageSprites: []
+  imageSprites2: []
   format: .png
+  imageFolder1: ./ImagesA/
+  imageFolder2: ./ImagesB/
 --- !u!4 &335548857
 Transform:
   m_ObjectHideFlags: 0

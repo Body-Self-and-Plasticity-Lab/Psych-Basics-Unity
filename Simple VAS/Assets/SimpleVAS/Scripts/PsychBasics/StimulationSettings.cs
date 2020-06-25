@@ -8,16 +8,19 @@ namespace UnityPsychBasics
 
         public static int counter;
         public string sceneAfterFirst, sceneAfterSecond;
-        public List<string> conditions = new List<string>(); 
+        public List<string> conditions = new List<string>();
 
-	    // Use this for initialization
-	    void Start () {
+        // Use this for initialization
+        void Start () {
             //example for repeating stimulation scene but with different tasks after each repetition.
-            counter++;
+            
             Debug.Log("current repetition " + counter);
-            if(counter ==1)
+            if(counter < 1) {
+                Debug.Log(counter + " should load " + sceneAfterFirst);
                 LoadScene.instance.sceneToLoad = sceneAfterFirst;
-            if (counter == 2){
+                counter++;
+            }
+            else if (counter == 1){
                 LoadScene.instance.sceneToLoad = sceneAfterSecond;
                 counter = 0;
             }

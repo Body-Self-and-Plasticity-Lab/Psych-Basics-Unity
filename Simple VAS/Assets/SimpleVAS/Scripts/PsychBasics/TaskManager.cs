@@ -70,7 +70,11 @@ namespace UnityPsychBasics {
             }
 
             if (useImages) {
-                for (int i = 0; i < ImageRead.instance.imageSprites.Count; i++) _imageList.Add(ImageRead.instance.imageSprites[i]);
+                if (StimulationSettings.counter == 1)
+                    for (int i = 0; i < ImageRead.instance.imageSprites.Count; i++) _imageList.Add(ImageRead.instance.imageSprites[i]);
+                else
+                    for (int i = 0; i < ImageRead.instance.imageSprites2.Count; i++) _imageList.Add(ImageRead.instance.imageSprites2[i]);
+
                 if (shuffle) CreateShuffleList();
                 SetImage();
             }
