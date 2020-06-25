@@ -551,8 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275bf87eed212447590b8c34f5351655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Task
+  sceneToLoad: Stimulation
   changeOnKey: 1
+  changeAtTime: 0
+  sceneDuration: 0
 --- !u!4 &1014098908
 Transform:
   m_ObjectHideFlags: 0
