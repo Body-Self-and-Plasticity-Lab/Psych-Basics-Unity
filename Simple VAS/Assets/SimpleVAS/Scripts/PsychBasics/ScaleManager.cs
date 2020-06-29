@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,27 +27,40 @@ namespace UnityPsychBasics
             foreach(Transform child in toggleGroup.GetComponent<Transform>())
                 Destroy(child.gameObject);
 
-            if (!TaskManager.instance.useAnalogueScale)
-                for (int i = 0; i < likertItems.Count; i++)
-                {
-                    var instanciatedPrefab = Instantiate(togglePrefab, Vector3.zero, Quaternion.identity);
-
-                    instanciatedPrefab.transform.SetParent(toggleGroup.gameObject.transform, false);
-
-                    Toggle toggle = instanciatedPrefab.GetComponent<Toggle>();
-                    toggle.GetComponentInChildren<Text>().text = likertItems[i];
-                    toggle.group = toggleGroup;
-                    toggle.onValueChanged.AddListener(delegate {TaskManager.instance.OnResponseSelection(); });
-                }
+            if (!TaskManager.instance.useAnalogueScale) 
+                StartCoroutine(ToggleCreationCoroutine());
 
             else
+                SetAnalogueScaleNames();
+        }
+
+        private IEnumerator ToggleCreationCoroutine(){ //dirty solving bug not calling likert answers
+            yield return new WaitForSeconds(0.2f);//delays toggle creation for a few moments artificially since it depends on variables called at the same time (on Start).
+
+            for (int i = 0; i < likertItems.Count; i++)
             {
-                foreach (Transform child in scrollbar.transform){
-                    if (child.name == "Left label") child.GetComponent<Text>().text = minVASLabel;
-                    else if (child.name == "Middle label") child.GetComponent<Text>().text = midVASLabel;
-                    else if (child.name == "Right label") child.GetComponent<Text>().text = maxVASLabel;
-                }
+                GameObject _instanciatedPrefab = Instantiate(togglePrefab, Vector3.zero, Quaternion.identity);
+
+                _instanciatedPrefab.transform.SetParent(toggleGroup.gameObject.transform, false);
+
+                Toggle _toggle = _instanciatedPrefab.GetComponent<Toggle>();
+                _toggle.GetComponentInChildren<Text>().text = likertItems[i];
+                _toggle.group = toggleGroup;
+
+                _toggle.onValueChanged.AddListener(delegate { TaskManager.instance.OnResponseSelection(); });
+            }
+ 
+        }
+
+
+        private void SetAnalogueScaleNames(){
+            foreach (Transform child in scrollbar.transform) {
+                if (child.name == "Left label") child.GetComponent<Text>().text = minVASLabel;
+                else if (child.name == "Middle label") child.GetComponent<Text>().text = midVASLabel;
+                else if (child.name == "Right label") child.GetComponent<Text>().text = maxVASLabel;
             }
         }
+
     }
+
 }
