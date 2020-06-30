@@ -477,7 +477,7 @@ MonoBehaviour:
   currentTask: 0
   withinScene: 0
   shuffleBool: 0
-  useImageBool: 0
+  useImageBool: 1
   useAnalogueScaleBool: 0
   useMouseBool: 0
   changeConditionAfterTask: 1
@@ -1258,7 +1258,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 600, y: 0}
+  m_SizeDelta: {x: 900, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870235925
 MonoBehaviour:
