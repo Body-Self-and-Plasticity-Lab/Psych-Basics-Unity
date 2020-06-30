@@ -1041,10 +1041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditions:
-  - swap_sync
-  - swap_async
-  - self_sync
-  - self_async
+  - sync
+  - async
   conditionDropdown: {fileID: 1451795897}
 --- !u!114 &335548859
 MonoBehaviour:

@@ -345,10 +345,9 @@ MonoBehaviour:
   sceneAfterFirst: ImageVAS
   sceneAfterSecond: ImageVAS_2
   conditions:
-  - swap_sync
-  - swap_async
-  - self_sync
-  - self_async
+  - sync
+  - async
+  _webcamDelay: {fileID: 383127492}
 --- !u!1 &1381459289
 GameObject:
   m_ObjectHideFlags: 0
