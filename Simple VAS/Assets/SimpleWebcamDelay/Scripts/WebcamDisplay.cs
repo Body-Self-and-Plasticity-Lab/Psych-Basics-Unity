@@ -14,8 +14,8 @@ namespace WebcamDelay {
 		public int webcamDeviceID;
 
 		void Start () {
-			
-			WebCamDevice[] devices = WebCamTexture.devices;
+			webcamDeviceID = PlayerPrefs.GetInt("selectedCamera"); 
+            WebCamDevice[] devices = WebCamTexture.devices;
 			string deviceName = devices[webcamDeviceID].name;
 			webcamTexture = new WebCamTexture(deviceName);
 			webcamTexture.Play();
@@ -83,6 +83,11 @@ namespace WebcamDelay {
 
 		}
 
-			
-	}
+        void OnDestroy()
+        {
+            if (webcamTexture != null) webcamTexture.Stop();
+        }
+
+
+    }
 }

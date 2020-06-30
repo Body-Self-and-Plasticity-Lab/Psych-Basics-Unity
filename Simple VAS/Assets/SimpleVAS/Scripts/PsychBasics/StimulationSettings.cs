@@ -9,14 +9,13 @@ namespace UnityPsychBasics
 
         public static int counter;
         public string sceneAfterFirst, sceneAfterSecond;
-        public List<string> conditions = new List<string>();
         public WebcamDisplay _webcamDelay;
 
         // Use this for initialization
         void Start () {
             //example for repeating stimulation scene but with different tasks after each repetition.
-            
-            if(counter < 1) {
+
+            if (counter < 1) {
                 LoadScene.instance.sceneToLoad = sceneAfterFirst;
                 counter++;
             }
@@ -26,12 +25,12 @@ namespace UnityPsychBasics
             }
 
             //conditionally check which is the current condition to activate the settings for it, e.g. synch/asynch, example:
-            if (ConditionDictionary.selectedOrder[CsvWrite.instance.condition] == conditions[CsvWrite.instance.condition])
+            if (ConditionDictionary.selectedOrder[CsvWrite.instance.condition] == "sync")
             {
-                _webcamDelay.delayTimeSeconds = 1f;
+                _webcamDelay.delayTimeSeconds = 0f;
             }
             else
-                _webcamDelay.delayTimeSeconds = 0f;
+                _webcamDelay.delayTimeSeconds = 1f;
 
             //Debug.Log("settings for condition " + ConditionDictionary.selectedOrder[CsvWrite.instance.condition]);           
             
