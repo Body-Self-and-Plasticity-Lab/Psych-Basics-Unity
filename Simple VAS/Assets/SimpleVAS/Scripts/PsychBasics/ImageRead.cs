@@ -11,11 +11,16 @@ namespace UnityPsychBasics
 
         [HideInInspector]
 	    public List<Sprite> imageSprites = new List<Sprite>();
+        [HideInInspector]
         public List<Sprite> imageSprites2 = new List<Sprite>();
+        [HideInInspector]
+        public List<Sprite> imagesLikert = new List<Sprite>();
+        [HideInInspector]
+        public List<string> imageNames1, imageNames2, likertImagesNames;
         public string format;
         public static ImageRead instance;
 
-        public string imageFolder1, imageFolder2;
+        public string imageFolder1, imageFolder2, likertImagesFolder;
 
         private void Awake()
         {
@@ -27,18 +32,36 @@ namespace UnityPsychBasics
         {
             string[] filePaths = Directory.GetFiles(imageFolder1, "*" + format);
 
-            foreach(string path in filePaths) {
-                Texture2D spriteTexture = LoadTexture(path);
+            for(int i = 0; i < filePaths.Length; i++) {
+                Texture2D spriteTexture = LoadTexture(filePaths[i]);
                 imageSprites.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+                filePaths[i] = filePaths[i].Replace(imageFolder1, "");
+                filePaths[i] = filePaths[i].Replace(format, "");
             }
 
+            imageNames1 = new List<string>(filePaths);
             filePaths = Directory.GetFiles(imageFolder2, "*" + format);
 
-            foreach (string path in filePaths)
+            for (int i = 0; i < filePaths.Length; i++)
             {
-                Texture2D spriteTexture = LoadTexture(path);
+                Texture2D spriteTexture = LoadTexture(filePaths[i]);
                 imageSprites2.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+                filePaths[i] = filePaths[i].Replace(imageFolder2, "");
+                filePaths[i] = filePaths[i].Replace(format, "");
             }
+
+            imageNames2 = new List<string>(filePaths);
+            filePaths = Directory.GetFiles(likertImagesFolder, "*" + format);
+
+            for (int i = 0; i < filePaths.Length; i++)
+            {
+                Texture2D spriteTexture = LoadTexture(filePaths[i]);
+                imagesLikert.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+                filePaths[i] = filePaths[i].Replace(likertImagesFolder, "");
+                filePaths[i] = filePaths[i].Replace(format, "");
+            }
+
+            likertImagesNames = new List<string>(filePaths);
         }
 
         public Texture2D LoadTexture(string FilePath) //adapted from https://forum.unity.com/threads/generating-sprites-dynamically-from-png-or-jpeg-files-in-c.343735/

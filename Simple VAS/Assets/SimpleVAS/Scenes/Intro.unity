@@ -990,9 +990,9 @@ GameObject:
   - component: {fileID: 335548857}
   - component: {fileID: 335548858}
   - component: {fileID: 335548860}
+  - component: {fileID: 335548861}
   - component: {fileID: 335548859}
   - component: {fileID: 335548856}
-  - component: {fileID: 335548861}
   m_Layer: 0
   m_Name: ExperimentManager
   m_TagString: Untagged
@@ -1013,9 +1013,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageSprites: []
   imageSprites2: []
+  imagesLikert: []
+  imageNames1: []
+  imageNames2: []
+  likertImagesNames: []
   format: .png
   imageFolder1: ./ImagesA/
   imageFolder2: ./ImagesB/
+  likertImagesFolder: ./ImagesLikert/
 --- !u!4 &335548857
 Transform:
   m_ObjectHideFlags: 0
@@ -1065,8 +1070,10 @@ MonoBehaviour:
   - item
   - response
   - response time
+  - item_name
   varValues: []
   responseTime: 
+  itemId: 
   item: 0
   condition: 0
   response: 0

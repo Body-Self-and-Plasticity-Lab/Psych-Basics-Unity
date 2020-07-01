@@ -28,8 +28,10 @@ namespace UnityPsychBasics {
         
         private List<string> _questionList = new List<string>();
         private List<Sprite> _imageList = new List<Sprite>();
+        private List<string> _imageNames = new List<string>();
         private List<int> _indexList = new List<int>();
         private int _currentItem;
+        private string _currentImageName = null;
         
         #endregion
         
@@ -70,10 +72,22 @@ namespace UnityPsychBasics {
             }
 
             if (useImages) {
-                if (StimulationSettings.counter == 1)
-                    for (int i = 0; i < ImageRead.instance.imageSprites.Count; i++) _imageList.Add(ImageRead.instance.imageSprites[i]);
-                else
-                    for (int i = 0; i < ImageRead.instance.imageSprites2.Count; i++) _imageList.Add(ImageRead.instance.imageSprites2[i]);
+
+                if (SceneManager.GetActiveScene().name == "SocialQuestionnaire")
+                {
+                    _imageList = new List<Sprite>(ImageRead.instance.imagesLikert);
+                    _imageNames = new List<string>(ImageRead.instance.likertImagesNames);
+                }
+                else{
+                    if (StimulationSettings.counter == 1) {
+                        _imageList = new List<Sprite>(ImageRead.instance.imageSprites);
+                        _imageNames = new List<string>(ImageRead.instance.imageNames1);
+                    }
+                    else {
+                        _imageList = new List<Sprite>(ImageRead.instance.imageSprites2);
+                        _imageNames = new List<string>(ImageRead.instance.imageNames1);
+                    }
+                }
 
                 if (shuffle) CreateShuffleList();
                 SetImage();
@@ -98,6 +112,7 @@ namespace UnityPsychBasics {
         public void OnNextButton() //TODO split into two methods, one for GUI, the other for CSVWrite 
         { 
             CsvWrite.instance.responseTime = Timer.instance.ElapsedTimeAndRestart();
+            CsvWrite.instance.itemId = _currentImageName;
             _nextButton.interactable = false;
             CsvWrite.instance.item = _currentItem;
             if (!setValueOutside) CsvWrite.instance.response = ResponseValue();
@@ -209,6 +224,7 @@ namespace UnityPsychBasics {
         {
             _image.sprite = _imageList[_currentItem];
             _image.GetComponent<RectTransform>().sizeDelta = new Vector2(_image.sprite.rect.width, (float)_image.sprite.rect.height);
+            _currentImageName = _imageNames[_currentItem];
         }
 
         private void QuestionsExhausted() 
