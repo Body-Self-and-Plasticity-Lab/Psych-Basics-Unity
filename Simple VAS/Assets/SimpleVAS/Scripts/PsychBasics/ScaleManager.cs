@@ -27,29 +27,30 @@ namespace UnityPsychBasics
             foreach(Transform child in toggleGroup.GetComponent<Transform>())
                 Destroy(child.gameObject);
 
-            if (!TaskManager.instance.useAnalogueScale) 
                 StartCoroutine(ToggleCreationCoroutine());
-
-            else
-                SetAnalogueScaleNames();
+            
         }
 
         private IEnumerator ToggleCreationCoroutine(){ //dirty solving bug not calling likert answers
-            yield return new WaitForSeconds(0.2f);//delays toggle creation for a few moments artificially since it depends on variables called at the same time (on Start).
+            yield return new WaitForSeconds(0.1f);//delays toggle creation for a few moments artificially since it depends on variables called at the same time (on Start).
 
-            for (int i = 0; i < likertItems.Count; i++)
-            {
-                GameObject _instanciatedPrefab = Instantiate(togglePrefab, Vector3.zero, Quaternion.identity);
+            if (!TaskManager.instance.useAnalogueScale)
+                for (int i = 0; i < likertItems.Count; i++)
+                {
+                    GameObject _instanciatedPrefab = Instantiate(togglePrefab, Vector3.zero, Quaternion.identity);
 
-                _instanciatedPrefab.transform.SetParent(toggleGroup.gameObject.transform, false);
+                    _instanciatedPrefab.transform.SetParent(toggleGroup.gameObject.transform, false);
 
-                Toggle _toggle = _instanciatedPrefab.GetComponent<Toggle>();
-                _toggle.GetComponentInChildren<Text>().text = likertItems[i];
-                _toggle.group = toggleGroup;
+                    Toggle _toggle = _instanciatedPrefab.GetComponent<Toggle>();
+                    _toggle.GetComponentInChildren<Text>().text = likertItems[i];
+                    _toggle.group = toggleGroup;
 
-                _toggle.onValueChanged.AddListener(delegate { TaskManager.instance.OnResponseSelection(); });
-            }
- 
+                    _toggle.onValueChanged.AddListener(delegate { TaskManager.instance.OnResponseSelection(); });
+                }
+
+            else
+                SetAnalogueScaleNames();
+
         }
 
 
