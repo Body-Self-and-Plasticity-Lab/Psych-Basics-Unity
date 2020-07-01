@@ -446,6 +446,7 @@ MonoBehaviour:
   shuffle: 0
   useImages: 0
   useAnalogueScale: 0
+  changeConditionWhenExhausted: 0
   setValueOutside: 0
 --- !u!4 &1180434043
 Transform:
@@ -476,9 +477,10 @@ MonoBehaviour:
   currentTask: 0
   withinScene: 0
   shuffleBool: 0
-  useImageBool: 0
+  useImageBool: 1
   useAnalogueScaleBool: 1
   useMouseBool: 0
+  changeConditionAfterTask: 1
   minVASLabel: strongly disagree
   midVASLabel: neither agree or disagree
   maxVASLabel: strongly agree
@@ -488,11 +490,11 @@ MonoBehaviour:
   - tres
   - cuatro
   - cinco
-  numberOfConditions: 4
   shuffle: 01000001
   useImage: 01000000
   analogueScale: 01000000
   useMouseClickSelector: 00000000
+  numberOfConditions: 4
 --- !u!114 &1180434045
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ namespace UnityPsychBasics {
         public List<string> varNames = new List<string>();
         
         [HideInInspector] public List<string> varValues = new List<string>();
-        [HideInInspector] public string responseTime;
+        [HideInInspector] public string responseTime, itemId;
         [HideInInspector] public int item, condition;//todo, might be cleaner to store the condition index elsewhere, perhaps in ConditionDictionary.
         [HideInInspector] public float response;
         
@@ -64,6 +64,7 @@ namespace UnityPsychBasics {
 			varValues[6] = item.ToString();
 			varValues[7] = response.ToString();
 			varValues[8] = responseTime;
+            varValues[9] = itemId;
 		}
 
 	}

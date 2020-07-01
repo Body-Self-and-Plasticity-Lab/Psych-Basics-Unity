@@ -15,8 +15,6 @@ namespace UnityPsychBasics {
         public Scrollbar _scrollbar;
         public ToggleGroup _toggleGroup;
         public Image _image;
-        [HideInInspector]
-        public string currentImageName;
 
         [HideInInspector] public bool shuffle, useImages, useAnalogueScale, changeConditionWhenExhausted;
         [HideInInspector] public bool setValueOutside;
@@ -33,12 +31,13 @@ namespace UnityPsychBasics {
         private List<string> _imageNames = new List<string>();
         private List<int> _indexList = new List<int>();
         private int _currentItem;
-        
+        private string _currentImageName = null;
+
         #endregion
-        
-        
+
+
         #region MonoBehavior methods
-        
+
         private void Awake() 
         {
             if (instance == null) instance = this;
@@ -98,6 +97,7 @@ namespace UnityPsychBasics {
         public void OnNextButton() //TODO split into two methods, one for GUI, the other for CSVWrite 
         { 
             CsvWrite.instance.responseTime = Timer.instance.ElapsedTimeAndRestart();
+            CsvWrite.instance.itemId = _currentImageName;
             _nextButton.interactable = false;
             CsvWrite.instance.item = _currentItem;
             if (!setValueOutside) CsvWrite.instance.response = ResponseValue();
@@ -209,7 +209,7 @@ namespace UnityPsychBasics {
         {
             _image.sprite = _imageList[_currentItem];
             _image.GetComponent<RectTransform>().sizeDelta = new Vector2(_image.sprite.rect.width, (float)_image.sprite.rect.height);
-            currentImageName = _imageNames[_currentItem];
+            _currentImageName = _imageNames[_currentItem];
         }
 
         private void QuestionsExhausted() 

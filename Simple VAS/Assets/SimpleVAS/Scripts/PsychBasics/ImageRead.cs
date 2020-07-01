@@ -26,11 +26,14 @@ namespace UnityPsychBasics
         {
             string[] filePaths = Directory.GetFiles("./Images/", "*" + format);
 
-            foreach(string path in filePaths) {
-                Texture2D spriteTexture = LoadTexture(path);
+            for(int i = 0; i < filePaths.Length; i++) {
+                Texture2D spriteTexture = LoadTexture(filePaths[i]);
                 imageSprites.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+                filePaths[i] = filePaths[i].Replace("./Images/", "");//removes pathname
+                filePaths[i] = filePaths[i].Replace(format, "");//removes format
             }
 
+            
             imageFileNames = new List<string>(filePaths);
         }
 
