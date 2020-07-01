@@ -150,7 +150,22 @@ namespace UnityPsychBasics {
                 _toggleGroup.SetAllTogglesOff();
                 _nextButton.interactable = false;
             }
-            else currentValue = _scrollbar.value;
+            else {
+                //dirty solution to conditionally flip the scale dimension for the image tasks
+                if (SceneManager.GetActiveScene().name == "ImageVAS" || SceneManager.GetActiveScene().name == "ImageVAS_2")
+                {
+                    if (BasicDataConfigurations.flipScale) {
+                        currentValue = (1 - _scrollbar.value);
+                        Debug.Log("should flip scale");
+                    }
+                    else
+                        currentValue = _scrollbar.value;
+
+                    Debug.Log("selected value is " + currentValue);
+                }
+                else
+                    currentValue = _scrollbar.value;
+            }
 
             return currentValue;
         }

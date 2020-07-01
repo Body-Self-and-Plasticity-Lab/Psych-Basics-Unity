@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Left label
+  m_Text: 
 --- !u!222 &275791120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Right label
+  m_Text: 
 --- !u!222 &455333816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Middle label
+  m_Text: 
 --- !u!222 &901000062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -481,9 +481,9 @@ MonoBehaviour:
   useAnalogueScaleBool: 1
   useMouseBool: 0
   changeConditionAfterTask: 0
-  minVASLabel: strongly disagree
-  midVASLabel: neither agree or disagree
-  maxVASLabel: strongly agree
+  minVASLabel: myself
+  midVASLabel: ' '
+  maxVASLabel: other
   likertItems:
   - uno
   - dos
@@ -695,7 +695,6 @@ RectTransform:
   - {fileID: 2124150098}
   - {fileID: 1475651657}
   - {fileID: 1870235924}
-  - {fileID: 2037076018}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1090,7 +1089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059da1cfcd5b99343907cabea655a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTimeForSelection: 1
 --- !u!114 &1825506002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1429,7 +1427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93815b55bc5d4149975537d007a4477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTimeForSelection: 1
 --- !u!114 &2009352323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,54 +1438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2037076017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2037076018}
-  - component: {fileID: 2037076019}
-  m_Layer: 5
-  m_Name: Labels
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2037076018
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2037076017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1382961454}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2037076019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2037076017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 473680202b36c2542bae3f33ba8fed85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  left: {fileID: 275791119}
-  middle: {fileID: 901000061}
-  right: {fileID: 455333815}
 --- !u!1 &2124150097
 GameObject:
   m_ObjectHideFlags: 0

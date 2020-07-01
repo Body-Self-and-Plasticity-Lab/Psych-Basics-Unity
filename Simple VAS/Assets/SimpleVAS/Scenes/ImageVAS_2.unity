@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Left label
+  m_Text: 
 --- !u!222 &275791120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Right label
+  m_Text: 
 --- !u!222 &455333816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Middle label
+  m_Text: 
 --- !u!222 &901000062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -481,9 +481,9 @@ MonoBehaviour:
   useAnalogueScaleBool: 1
   useMouseBool: 0
   changeConditionAfterTask: 0
-  minVASLabel: strongly disagree
-  midVASLabel: neither agree or disagree
-  maxVASLabel: strongly agree
+  minVASLabel: myself
+  midVASLabel: ' '
+  maxVASLabel: other
   likertItems:
   - uno
   - dos

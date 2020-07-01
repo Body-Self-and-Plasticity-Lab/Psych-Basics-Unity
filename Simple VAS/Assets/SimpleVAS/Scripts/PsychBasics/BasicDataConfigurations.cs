@@ -11,10 +11,10 @@ namespace UnityPsychBasics
 	    public InputField nameField, ageField;
 	    public Text genderField, handednessField;
 	    public Button nextButton;
-        public Toggle clickOrder;
+        public Toggle clickOrder, scaleFlipper;
 
 	    public static string ID, age, gender, handedness, conditionOrder;
-        public static bool mouseClickOrder;
+        public static bool mouseClickOrder, flipScale;
 
         private CsvWrite _csvWriter;
 
@@ -42,7 +42,7 @@ namespace UnityPsychBasics
 	    }
 
 	    public void OnNextButton () {
-
+            flipScale = scaleFlipper.isOn;
             mouseClickOrder = clickOrder.isOn;
 		    gender = genderField.text;
 		    handedness = handednessField.text;
