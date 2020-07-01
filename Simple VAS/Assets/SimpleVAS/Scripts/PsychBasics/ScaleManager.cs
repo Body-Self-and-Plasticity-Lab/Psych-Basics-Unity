@@ -60,7 +60,8 @@ namespace UnityPsychBasics
             foreach (Transform child in scrollbar.transform) {
                 //not very clean solution but works...
                 if(SceneManager.GetActiveScene().name == "ImageVAS" || SceneManager.GetActiveScene().name == "ImageVAS_2") {//conditionally flip the scale dimension for the image tasks
-                    if (BasicDataConfigurations.flipScale){
+
+                    if (!BasicDataConfigurations.flipScale){
                         if (child.name == "Left label") child.GetComponent<Text>().text = minVASLabel;
                         else if (child.name == "Middle label") child.GetComponent<Text>().text = midVASLabel;
                         else if (child.name == "Right label") child.GetComponent<Text>().text = maxVASLabel;
