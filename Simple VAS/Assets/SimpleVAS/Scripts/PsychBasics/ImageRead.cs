@@ -11,6 +11,8 @@ namespace UnityPsychBasics
 
         [HideInInspector]
 	    public List<Sprite> imageSprites = new List<Sprite>();
+        [HideInInspector]
+        public List<string> imageFileNames;
         public string format;
         public static ImageRead instance;
 
@@ -28,6 +30,8 @@ namespace UnityPsychBasics
                 Texture2D spriteTexture = LoadTexture(path);
                 imageSprites.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
             }
+
+            imageFileNames = new List<string>(filePaths);
         }
 
         public Texture2D LoadTexture(string FilePath) //adapted from https://forum.unity.com/threads/generating-sprites-dynamically-from-png-or-jpeg-files-in-c.343735/

@@ -15,6 +15,8 @@ namespace UnityPsychBasics {
         public Scrollbar _scrollbar;
         public ToggleGroup _toggleGroup;
         public Image _image;
+        [HideInInspector]
+        public string currentImageName;
 
         [HideInInspector] public bool shuffle, useImages, useAnalogueScale, changeConditionWhenExhausted;
         [HideInInspector] public bool setValueOutside;
@@ -28,6 +30,7 @@ namespace UnityPsychBasics {
         
         private List<string> _questionList = new List<string>();
         private List<Sprite> _imageList = new List<Sprite>();
+        private List<string> _imageNames = new List<string>();
         private List<int> _indexList = new List<int>();
         private int _currentItem;
         
@@ -70,7 +73,8 @@ namespace UnityPsychBasics {
             }
 
             if (useImages) {
-                for (int i = 0; i < ImageRead.instance.imageSprites.Count; i++) _imageList.Add(ImageRead.instance.imageSprites[i]);
+                _imageList = new List<Sprite>(ImageRead.instance.imageSprites);
+                _imageNames = new List<string>(ImageRead.instance.imageFileNames);
                 if (shuffle) CreateShuffleList();
                 SetImage();
             }
@@ -205,6 +209,7 @@ namespace UnityPsychBasics {
         {
             _image.sprite = _imageList[_currentItem];
             _image.GetComponent<RectTransform>().sizeDelta = new Vector2(_image.sprite.rect.width, (float)_image.sprite.rect.height);
+            currentImageName = _imageNames[_currentItem];
         }
 
         private void QuestionsExhausted() 
