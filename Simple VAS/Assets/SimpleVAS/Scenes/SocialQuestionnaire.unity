@@ -485,13 +485,13 @@ MonoBehaviour:
   midVASLabel: neither agree or disagree
   maxVASLabel: strongly agree
   likertItems:
-  - no overlap
-  - little overlap
-  - some overlap
-  - equal overlap
-  - strong overlap
-  - very strong overlap
-  - most overlap
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
   shuffle: 01000001
   useImage: 01000000
   analogueScale: 01000000

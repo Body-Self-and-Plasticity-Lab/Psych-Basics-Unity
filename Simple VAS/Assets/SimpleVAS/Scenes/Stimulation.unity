@@ -317,7 +317,7 @@ MonoBehaviour:
   sceneToLoad: ImageVAS
   changeOnKey: 1
   changeAtTime: 1
-  sceneDuration: 100
+  sceneDuration: 60
 --- !u!4 &1334709768
 Transform:
   m_ObjectHideFlags: 0
@@ -344,9 +344,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneAfterFirst: ImageVAS
   sceneAfterSecond: ImageVAS_2
-  conditions:
-  - sync
-  - async
   _webcamDelay: {fileID: 383127492}
 --- !u!1 &1381459289
 GameObject:
@@ -517,7 +514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1562367846
 RectTransform:
   m_ObjectHideFlags: 0
