@@ -107,6 +107,7 @@ namespace UnityPsychBasics {
         public void OnResponseSelection() 
         {
             _nextButton.interactable = true;
+            _scrollbar.handleRect.gameObject.SetActive(true);
         }
 
         public void OnNextButton() //TODO split into two methods, one for GUI, the other for CSVWrite 
@@ -118,6 +119,7 @@ namespace UnityPsychBasics {
             if (!setValueOutside) CsvWrite.instance.response = ResponseValue();
             CsvWrite.instance.LogTrial();
             _scrollbar.value = 0.5f;
+            _scrollbar.handleRect.gameObject.SetActive(false);
             DoAfterSeletion();
         }
 
