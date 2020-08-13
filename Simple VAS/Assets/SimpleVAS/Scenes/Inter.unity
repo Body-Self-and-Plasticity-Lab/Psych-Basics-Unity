@@ -704,7 +704,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Please wait for the experimenter to proceed
+  m_Text: " Please, in the next section, keep your hand on your knees and focus on
+    the screen. You will see your face with a dog filter overlayed. Move in a natural
+    way in order to explore: blink, open your mouth and move your cheeks; and tilt
+    your head towards up, down, left and right. \n\nWhen you are ready press the spacebar."
 --- !u!222 &1338755282
 CanvasRenderer:
   m_ObjectHideFlags: 0
