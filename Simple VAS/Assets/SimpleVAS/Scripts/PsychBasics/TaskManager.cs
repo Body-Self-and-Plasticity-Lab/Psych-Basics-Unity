@@ -28,7 +28,9 @@ namespace UnityPsychBasics {
         
         private List<string> _questionList = new List<string>();
         private List<Sprite> _imageList = new List<Sprite>();
+        private List<Sprite> _imageList2 = new List<Sprite>();
         private List<string> _imageNames = new List<string>();
+        private List<string> _imageNames2 = new List<string>();
         private List<int> _indexList = new List<int>();
         private int _currentItem;
         private string _currentImageName = null;
@@ -73,8 +75,16 @@ namespace UnityPsychBasics {
             }
 
             if (useImages) {
-                _imageList = new List<Sprite>(ImageRead.instance.imageSprites);
-                _imageNames = new List<string>(ImageRead.instance.imageFileNames);
+                if (SceneManager.GetActiveScene().name == "Self in other") {
+                    _imageList = new List<Sprite>(ImageRead.instance.imageSprites);
+                    _imageNames = new List<string>(ImageRead.instance.imageFileNames);
+                }
+                else if (SceneManager.GetActiveScene().name == "Boundaries")
+                {
+                    _imageList = new List<Sprite>(ImageRead.instance.imageSprites2);
+                    _imageNames = new List<string>(ImageRead.instance.imageFileNames2);
+                }
+
                 if (shuffle) CreateShuffleList();
                 SetImage();
             }

@@ -12,7 +12,11 @@ namespace UnityPsychBasics
         [HideInInspector]
 	    public List<Sprite> imageSprites = new List<Sprite>();
         [HideInInspector]
+        public List<Sprite> imageSprites2 = new List<Sprite>();
+        [HideInInspector]
         public List<string> imageFileNames;
+        [HideInInspector]
+        public List<string> imageFileNames2;
         public string format;
         public static ImageRead instance;
 
@@ -25,6 +29,7 @@ namespace UnityPsychBasics
         void Start () 
         {
             string[] filePaths = Directory.GetFiles("./Images/", "*" + format);
+            string[] filePaths2 = Directory.GetFiles("./ImagesVAS/", "*" + format);
 
             for(int i = 0; i < filePaths.Length; i++) {
                 Texture2D spriteTexture = LoadTexture(filePaths[i]);
@@ -33,8 +38,17 @@ namespace UnityPsychBasics
                 filePaths[i] = filePaths[i].Replace(format, "");//removes format
             }
 
-            
+            for (int i = 0; i < filePaths2.Length; i++)
+            {
+                Texture2D spriteTexture = LoadTexture(filePaths2[i]);
+                imageSprites2.Add(Sprite.Create(spriteTexture, new Rect(0, 0, spriteTexture.width, spriteTexture.height), new Vector2(0, 0), 100f, 0, SpriteMeshType.Tight));
+                filePaths2[i] = filePaths2[i].Replace("./Images/", "");//removes pathname
+                filePaths2[i] = filePaths2[i].Replace(format, "");//removes format
+            }
+
+
             imageFileNames = new List<string>(filePaths);
+            imageFileNames2 = new List<string>(filePaths2);
         }
 
         public Texture2D LoadTexture(string FilePath) //adapted from https://forum.unity.com/threads/generating-sprites-dynamically-from-png-or-jpeg-files-in-c.343735/

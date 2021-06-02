@@ -215,7 +215,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 240, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275791119
 MonoBehaviour:
@@ -290,7 +290,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 240, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455333815
 MonoBehaviour:
@@ -472,26 +472,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8134bd333f0762247a70180a64abdf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBeforeLastCondition: Boundaries
-  sceneAfterLastCondition: Boundaries
+  sceneBeforeLastCondition: Goodbye
+  sceneAfterLastCondition: Goodbye
   currentTask: 0
   withinScene: 0
   shuffleBool: 0
   useImageBool: 1
-  useAnalogueScaleBool: 0
+  useAnalogueScaleBool: 1
   useMouseBool: 0
   changeConditionAfterTask: 0
-  minVASLabel: 
+  minVASLabel: My body boundaries are almost imperceptible
   midVASLabel: 
-  maxVASLabel: 
+  maxVASLabel: My body boundaries are extremely salient
   likertItems:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
+  - strongly disagree
+  - disagree
+  - somewhat disagree
+  - neither agree or disagree
+  - somewhat agree
+  - agree
+  - strongly agree
   shuffle: 
   useImage: 
   analogueScale: 
