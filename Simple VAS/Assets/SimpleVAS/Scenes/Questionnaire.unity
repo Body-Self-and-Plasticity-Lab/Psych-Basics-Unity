@@ -481,9 +481,9 @@ MonoBehaviour:
   useAnalogueScaleBool: 1
   useMouseBool: 0
   changeConditionAfterTask: 0
-  minVASLabel: strongly disagree
-  midVASLabel: neither agree or disagree
-  maxVASLabel: strongly agree
+  minVASLabel: stimme gar nicht zu
+  midVASLabel: 
+  maxVASLabel: stimme sehr zu
   likertItems: []
   shuffle: 
   useImage: 
@@ -1197,7 +1197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next
+  m_Text: Weiter
 --- !u!222 &1866524148
 CanvasRenderer:
   m_ObjectHideFlags: 0

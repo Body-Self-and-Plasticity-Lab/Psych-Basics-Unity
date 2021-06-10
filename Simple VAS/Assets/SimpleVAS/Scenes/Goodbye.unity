@@ -462,7 +462,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thank you for your participation!
+  m_Text: "Danke f\xFCr die Teilnahme\t"
 --- !u!222 &1338755282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -502,6 +502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: VAS
   changeOnKey: 0
+  changeAtTime: 0
+  sceneDuration: 0
 --- !u!114 &1377123616
 MonoBehaviour:
   m_ObjectHideFlags: 0

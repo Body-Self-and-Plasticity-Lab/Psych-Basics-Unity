@@ -657,7 +657,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: When you are ready, please select next to answer the questionnaire...
+  m_Text: Wenn du bereit bist, darfst du auf den Weiter Knopf klicken um die Fragen
+    zu beantworten.
 --- !u!222 &1338755282
 CanvasRenderer:
   m_ObjectHideFlags: 0
