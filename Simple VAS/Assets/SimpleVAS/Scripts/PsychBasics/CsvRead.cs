@@ -56,9 +56,10 @@ namespace UnityPsychBasics {
 					    // While there's lines left in the text file, do this:
 					    do	{
 						    //  Do whatever you need to do with the text line, it's a string now. 
-						    string[] entries = line.Split(',');
+						    string[] entries = line.Split('\t');
 
-						    if (entries.Length > 0){
+
+                            if (entries.Length > 0){
 							    //Debug.Log(entries[0]);
 							    arrayToTransferTo.Add (entries[0]);
 						    }

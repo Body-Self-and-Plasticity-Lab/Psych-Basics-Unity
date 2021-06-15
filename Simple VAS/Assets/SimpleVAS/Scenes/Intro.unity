@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1039,10 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditions:
-  - swap_sync
-  - swap_async
-  - self_sync
-  - self_async
+  - body_swap
   conditionDropdown: {fileID: 1451795897}
 --- !u!114 &335548859
 MonoBehaviour:
@@ -1068,7 +1065,7 @@ MonoBehaviour:
   - itemID
   varValues: []
   responseTime: 
-  itemID: 
+  itemId: 
   item: 0
   condition: 0
   response: 0
@@ -1218,7 +1215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &405856405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3539,7 +3536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1132715602
 RectTransform:
   m_ObjectHideFlags: 0
