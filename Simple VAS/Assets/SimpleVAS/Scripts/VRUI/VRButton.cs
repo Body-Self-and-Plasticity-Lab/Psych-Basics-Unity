@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-//using VRStandardAssets.Utils;
+using VRStandardAssets.Utils;
 
 namespace VRStandardAssets.Utils
 {
