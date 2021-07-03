@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rigth handed
+  m_Text: Egocentric
 --- !u!222 &15428586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Experimental
+  m_Text: Female
 --- !u!222 &16540431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1059,9 +1059,9 @@ MonoBehaviour:
   - ID
   - age
   - gender
-  - handedness
-  - scene
   - condition
+  - scene
+  - x
   - item
   - response
   - response time
@@ -1218,7 +1218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &405856405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2306,9 +2306,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Rigth handed
+    - m_Text: Egocentric
       m_Image: {fileID: 0}
-    - m_Text: Left handed
+    - m_Text: Allocentric
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3539,7 +3539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1132715602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6572,7 +6572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Weiter
+  m_Text: Accept
 --- !u!222 &1866524148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7165,9 +7165,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Experimental
+    - m_Text: Female
       m_Image: {fileID: 0}
-    - m_Text: Control
+    - m_Text: Male
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

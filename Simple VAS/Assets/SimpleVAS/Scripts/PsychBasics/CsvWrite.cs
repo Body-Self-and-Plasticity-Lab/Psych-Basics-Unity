@@ -60,7 +60,7 @@ namespace UnityPsychBasics {
 			varValues[2] = BasicDataConfigurations.gender;
 			varValues[3] = BasicDataConfigurations.handedness;
 			varValues[4] = SceneManager.GetActiveScene().name;
-			varValues[5] = ConditionDictionary.selectedOrder[condition];
+			varValues[5] = "null";
 			varValues[6] = item.ToString();
 			varValues[7] = response.ToString();
 			varValues[8] = responseTime;

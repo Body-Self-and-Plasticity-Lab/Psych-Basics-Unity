@@ -447,7 +447,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Weiter
+  m_Text: Aceptar
 --- !u!222 &345680571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -657,9 +657,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Du wirst auf der n\xE4chsten Seite 7 Abbildungen sehen. Welches Bild von
-    1 bis 7 beschreibt deine Beziehung zu der anderen Person? Bitte Klicke auf Weiter
-    wenn du bereit bist die Frage zu beantworten. "
+  m_Text: "A continuaci\xF3n ver\xE1s una serie de im\xE1genes representando tu relaci\xF3n
+    con quien est\xE1 sentade en la silla. Selecciona el n\xFAmero que corresponde
+    a la imagen que mejor describe esa relaci\xF3n."
 --- !u!222 &1338755282
 CanvasRenderer:
   m_ObjectHideFlags: 0
