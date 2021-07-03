@@ -481,9 +481,9 @@ MonoBehaviour:
   useAnalogueScaleBool: 1
   useMouseBool: 0
   changeConditionAfterTask: 0
-  minVASLabel: 
+  minVASLabel: totalmente en desacuerdo
   midVASLabel: 
-  maxVASLabel: 
+  maxVASLabel: totalmente de acuerdo
   likertItems: []
   shuffle: 
   useImage: 
