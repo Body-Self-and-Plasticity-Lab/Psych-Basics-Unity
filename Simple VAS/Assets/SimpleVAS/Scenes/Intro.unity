@@ -993,6 +993,7 @@ GameObject:
   - component: {fileID: 335548859}
   - component: {fileID: 335548856}
   - component: {fileID: 335548861}
+  - component: {fileID: 335548862}
   m_Layer: 0
   m_Name: ExperimentManager
   m_TagString: Untagged
@@ -1100,6 +1101,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portName: 
   baudRate: 9600
+--- !u!114 &335548862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335548855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e7b1092f6418446a0f7a150abe241f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &373384986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &405856405
 RectTransform:
   m_ObjectHideFlags: 0
