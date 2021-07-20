@@ -48,7 +48,7 @@ namespace UnityPsychBasics {
 		private void WriteToFile(List<string> stringList)
 		{
             string stringLine = string.Join(",", stringList.ToArray());
-			System.IO.StreamWriter file = new System.IO.StreamWriter("./Logs/" + BasicDataConfigurations.ID + "_log.csv", true);
+			System.IO.StreamWriter file = new System.IO.StreamWriter("./Logs/" + BasicDataConfigurations.ID + "_log_emb.csv", true);
 			file.WriteLine(stringLine);
 			file.Close();	
 		}
